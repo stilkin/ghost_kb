@@ -9,6 +9,8 @@ import android.view.inputmethod.InputConnection
 import android.widget.Button
 import android.widget.TextView
 import be.pocito.pboard.R
+import be.pocito.pboard.style.FontStyle
+import be.pocito.pboard.style.FontStyleTransformer
 
 /**
  * PBoard Input Method Service
@@ -25,6 +27,9 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     // UI components
     private var styleIndicator: TextView? = null
     private var styleButton: Button? = null
+    
+    // Font style management
+    private var currentFontStyle: FontStyle = FontStyle.NORMAL
     
     /**
      * Called when the input view is being created.
@@ -48,9 +53,11 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         
         // Set up style button click listener
         styleButton?.setOnClickListener {
-            // TODO: Open style selector
             showStyleSelector()
         }
+        
+        // Update style indicator with current style
+        updateStyleIndicator()
         
         return keyboardView
     }
@@ -97,8 +104,8 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 else -> {
                     // Regular character key
                     val char = primaryCode.toChar()
-                    // TODO: Transform character based on current font style
-                    val transformedChar = transformCharacter(char)
+                    // Transform character based on current font style
+                    val transformedChar = FontStyleTransformer.transformCharacter(char, currentFontStyle)
                     ic.commitText(transformedChar.toString(), 1)
                 }
             }
@@ -110,8 +117,8 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
      */
     override fun onText(text: CharSequence?) {
         inputConnection?.let { ic ->
-            // TODO: Transform text based on current font style
-            val transformedText = transformText(text.toString())
+            // Transform text based on current font style
+            val transformedText = FontStyleTransformer.transformText(text.toString(), currentFontStyle)
             ic.commitText(transformedText, 1)
         }
     }
@@ -140,23 +147,25 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     override fun swipeUp() {}
     
     /**
-     * Transform a single character based on current font style.
-     * TODO: Implement with FontStyleTransformer
+     * Update the style indicator text with current font style.
      */
-    private fun transformCharacter(char: Char): Char {
-        // Placeholder: return original character for now
-        // Will be implemented with FontStyleTransformer
-        return char
+    private fun updateStyleIndicator() {
+        styleIndicator?.text = "Style: ${currentFontStyle.displayName}"
     }
     
     /**
-     * Transform text based on current font style.
-     * TODO: Implement with FontStyleTransformer
+     * Set the current font style and update UI.
      */
-    private fun transformText(text: String): String {
-        // Placeholder: return original text for now
-        // Will be implemented with FontStyleTransformer
-        return text
+    fun setFontStyle(style: FontStyle) {
+        currentFontStyle = style
+        updateStyleIndicator()
+    }
+    
+    /**
+     * Get the current font style.
+     */
+    fun getCurrentFontStyle(): FontStyle {
+        return currentFontStyle
     }
     
     /**
@@ -164,8 +173,17 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
      * TODO: Implement StyleSelector UI
      */
     private fun showStyleSelector() {
-        // Placeholder: show toast for now
-        // Will be implemented with StyleSelector
-        android.widget.Toast.makeText(this, "Style selector coming soon!", android.widget.Toast.LENGTH_SHORT).show()
+        // Placeholder: cycle through styles for now
+        // Will be implemented with proper StyleSelector UI
+        val allStyles = FontStyleTransformer.getAllStyles()
+        val currentIndex = allStyles.indexOf(currentFontStyle)
+        val nextIndex = (currentIndex + 1) % allStyles.size
+        setFontStyle(allStyles[nextIndex])
+        
+        android.widget.Toast.makeText(
+            this,
+            "Style: ${currentFontStyle.displayName}",
+            android.widget.Toast.LENGTH_SHORT
+        ).show()
     }
 }
