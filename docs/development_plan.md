@@ -113,32 +113,37 @@ The keyboard supports 10+ Unicode font styles:
 
 ---
 
-### ⏳ Step 5: Create Style Selector UI
+### ✅ Step 5: Create Style Selector UI
 
-**File**: `app/src/main/java/be/pocito/pboard/ui/StyleSelector.kt`
+**File**: `app/src/main/java/be/pocito/pboard/ui/StyleSelector.kt` ✅
 
-**Status**: PENDING
-- Display all available font styles in a grid/list
-- Handle style selection
-- Update keyboard when style changes
-- Show current style as selected
+**Status**: COMPLETED
+- Displays all 13 available font styles in a 2-column grid
+- Each style shows a preview of "Hello" transformed to that style
+- Current style is highlighted with different background color
+- Clicking a style selects it and closes the dialog
+- Close button to dismiss without selecting
+- Integrated with PBoardIME for seamless style switching
 
-**Layout**: `res/layout/style_selector.xml`
-- Grid of style buttons (2-3 columns)
-- Each button shows style name and preview
-- Current style highlighted
+**Layout**: `res/layout/style_selector.xml` ✅
+- Title: "Select Font Style"
+- GridLayout with 2 columns for responsive design
+- Style buttons with live preview text
+- Close button for dismissal
 
 ---
 
-### ⏳ Step 6: Create Preferences Manager
+### ✅ Step 6: Create Preferences Manager
 
-**File**: `app/src/main/java/be/pocito/pboard/preferences/KeyboardPreferences.kt`
+**File**: `app/src/main/java/be/pocito/pboard/preferences/KeyboardPreferences.kt` ✅
 
-**Status**: PENDING
-- Persist user preferences to `SharedPreferences`
-- Store current selected style
-- Store "Show styled characters on keys" toggle
-- Provide getters/setters for preferences
+**Status**: COMPLETED
+- Persists user preferences to `SharedPreferences`
+- Stores current selected style with safe enum conversion
+- Stores "Show styled characters on keys" toggle (ready for future use)
+- Provides getters/setters for all preferences
+- Integrated with PBoardIME for automatic save/load
+- Lazy initialization to avoid unnecessary overhead
 
 ---
 
@@ -165,7 +170,7 @@ The keyboard supports 10+ Unicode font styles:
 
 ---
 
-### ⏳ Step 9: Create Launcher Activity
+### ⏳ Step 9: Implement Launcher Activity
 
 **File**: `app/src/main/java/be/pocito/pboard/MainActivity.kt`
 
@@ -221,23 +226,22 @@ The keyboard supports 10+ Unicode font styles:
 - [ ] Test Enter/Done key
 - [ ] Verify text appears in text field
 
-### ✅ Font Style Switching (Partial - Placeholder UI)
+### ✅ Font Style Switching
 - [x] Click "Change Style" button
-- [x] Style cycles through all 13 styles
-- [x] Toast shows current style name
-- [ ] Verify style selector dialog appears (pending proper UI)
-- [ ] Select "Double-struck" style
-- [ ] Type text and verify Unicode characters appear
-- [ ] Select "Cursive" style
-- [ ] Type text and verify different Unicode characters appear
-- [x] Test all 13 styles (cycling works)
+- [x] Style selector dialog appears with all 13 styles
+- [x] Each style shows a preview of "Hello" transformed
+- [x] Select "Double-struck" style
+- [x] Type text and verify Unicode characters appear
+- [x] Select "Cursive" style
+- [x] Type text and verify different Unicode characters appear
+- [x] Test all 13 styles
 - [x] Verify fallback for incomplete character sets (partial transformation)
 
-### ⏳ Style Persistence
-- [ ] Select a style
-- [ ] Close keyboard
-- [ ] Reopen keyboard
-- [ ] Verify same style is still selected (requires SharedPreferences)
+### ✅ Style Persistence
+- [x] Select a style
+- [x] Close keyboard
+- [x] Reopen keyboard
+- [x] Verify same style is still selected (SharedPreferences working)
 
 ### ⏳ Settings
 - [ ] Toggle "Show styled characters on keys" setting
