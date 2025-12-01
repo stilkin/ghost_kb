@@ -1,6 +1,7 @@
 package be.pocito.pboard
 
 import android.inputmethodservice.InputMethodService
+import android.inputmethodservice.Keyboard
 import android.inputmethodservice.KeyboardView
 import android.view.KeyEvent
 import android.view.View
@@ -105,15 +106,15 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         inputConnection?.let { ic ->
             when (primaryCode) {
                 // Special key codes
-                Keyboard.KEYCODE_DELETE -> {
+                android.inputmethodservice.Keyboard.KEYCODE_DELETE -> {
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL))
                 }
-                Keyboard.KEYCODE_DONE -> {
+                android.inputmethodservice.Keyboard.KEYCODE_DONE -> {
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER))
                 }
-                Keyboard.KEYCODE_SHIFT -> {
+                android.inputmethodservice.Keyboard.KEYCODE_SHIFT -> {
                     // TODO: Handle shift key
                 }
                 KEYCODE_STYLE -> {
@@ -123,8 +124,8 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                     // Regular character key
                     val char = primaryCode.toChar()
                     // Transform character based on current font style
-                    val transformedChar = FontStyleTransformer.transformCharacter(char, currentFontStyle)
-                    ic.commitText(transformedChar.toString(), 1)
+                    val transformedText = FontStyleTransformer.transformCharacter(char, currentFontStyle)
+                    ic.commitText(transformedText, 1)
                 }
             }
         }

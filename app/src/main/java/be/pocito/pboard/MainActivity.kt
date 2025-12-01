@@ -66,7 +66,8 @@ class MainActivity : Activity() {
      */
     private fun openInputMethodSelector() {
         try {
-            val intent = Intent(Settings.ACTION_SHOW_INPUT_METHOD_PICKER)
+            // Use the same settings action - it will show the input method picker
+            val intent = Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)
             startActivity(intent)
         } catch (e: Exception) {
             Toast.makeText(

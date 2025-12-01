@@ -18,17 +18,17 @@ object FontStyleTransformer {
      * @param style The font style to apply
      * @return The transformed character, or the original if not found in the style
      */
-    fun transformCharacter(char: Char, style: FontStyle): Char {
+    fun transformCharacter(char: Char, style: FontStyle): String {
         // Return original character for NORMAL style
         if (style == FontStyle.NORMAL) {
-            return char
+            return char.toString()
         }
         
         // Get the character mapping for this style
         val mapping = FontStyles.getMapping(style)
         
         // Return transformed character if found, otherwise return original (fallback)
-        return mapping[char] ?: char
+        return mapping[char] ?: char.toString()
     }
     
     /**
@@ -52,7 +52,7 @@ object FontStyleTransformer {
         
         // Transform each character, using fallback for missing characters
         return text.map { char ->
-            mapping[char] ?: char
+            mapping[char] ?: char.toString()
         }.joinToString("")
     }
     
