@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/keyboard_background">
+    
+    <!-- Style Indicator Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/style_bar_background">
+        
+        <TextView
+            android:id="@+id/style_indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Style: Normal"
+            android:textSize="12sp"
+            android:textColor="@color/style_indicator_text" />
+            
+        <Button
+            android:id="@+id/style_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Style"
+            android:textSize="10sp"
+            android:minHeight="24dp"
+            android:padding="4dp" />
+    </LinearLayout>
+    
+    <!-- Keyboard View -->
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:keyTextColor="@color/key_text"
+        android:keyTextSize="18sp"
+        android:keyBackground="@drawable/key_background"
+        android:keyPreviewLayout="@layout/key_preview"
+        android:keyPreviewHeight="80dp"
+        android:keyPreviewOffset="10dp" />
+        
+</LinearLayout>
