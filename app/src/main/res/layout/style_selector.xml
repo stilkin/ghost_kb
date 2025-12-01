@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Font Style"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+    
+    <!-- Style Grid -->
+    <GridLayout
+        android:id="@+id/style_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="7"
+        android:padding="8dp" />
+    
+    <!-- Close Button -->
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:layout_marginTop="16dp" />
+    
+</LinearLayout>

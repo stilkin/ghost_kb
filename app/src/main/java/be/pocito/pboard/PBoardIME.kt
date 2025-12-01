@@ -11,6 +11,7 @@ import android.widget.TextView
 import be.pocito.pboard.R
 import be.pocito.pboard.style.FontStyle
 import be.pocito.pboard.style.FontStyleTransformer
+import be.pocito.pboard.ui.StyleSelector
 
 /**
  * PBoard Input Method Service
@@ -170,20 +171,15 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     
     /**
      * Show style selector dialog.
-     * TODO: Implement StyleSelector UI
      */
     private fun showStyleSelector() {
-        // Placeholder: cycle through styles for now
-        // Will be implemented with proper StyleSelector UI
-        val allStyles = FontStyleTransformer.getAllStyles()
-        val currentIndex = allStyles.indexOf(currentFontStyle)
-        val nextIndex = (currentIndex + 1) % allStyles.size
-        setFontStyle(allStyles[nextIndex])
-        
-        android.widget.Toast.makeText(
-            this,
-            "Style: ${currentFontStyle.displayName}",
-            android.widget.Toast.LENGTH_SHORT
-        ).show()
+        val styleSelector = StyleSelector(
+            context = this,
+            currentStyle = currentFontStyle,
+            onStyleSelected = { selectedStyle ->
+                setFontStyle(selectedStyle)
+            }
+        )
+        styleSelector.show()
     }
 }
