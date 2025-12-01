@@ -12,6 +12,7 @@ import be.pocito.pboard.R
 import be.pocito.pboard.style.FontStyle
 import be.pocito.pboard.style.FontStyleTransformer
 import be.pocito.pboard.ui.StyleSelector
+import be.pocito.pboard.preferences.KeyboardPreferences
 
 /**
  * PBoard Input Method Service
@@ -31,6 +32,9 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     
     // Font style management
     private var currentFontStyle: FontStyle = FontStyle.NORMAL
+    
+    // Preferences
+    private lateinit var preferences: KeyboardPreferences
     
     /**
      * Called when the input view is being created.
@@ -64,10 +68,17 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
     
     /**
-     * Called when the input method is starting.
+     * Called when input method is starting.
      */
     override fun onStartInput(attribute: EditorInfo?, restarting: Boolean) {
         super.onStartInput(attribute, restarting)
+        // Initialize preferences on first input
+        if (!::preferences.isInitialized) {
+            preferences = KeyboardPreferences(this)
+            // Load saved style
+            currentFontStyle = preferences.getCurrentStyle()
+            updateStyleIndicator()
+        }
         // Get input connection for sending text
         inputConnection = currentInputConnection
     }
@@ -160,6 +171,10 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     fun setFontStyle(style: FontStyle) {
         currentFontStyle = style
         updateStyleIndicator()
+        // Save to preferences
+        if (::preferences.isInitialized) {
+            preferences.setCurrentStyle(style)
+        }
     }
     
     /**
