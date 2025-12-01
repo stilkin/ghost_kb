@@ -4,10 +4,10 @@ import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import be.pocito.pboard.R
 import be.pocito.pboard.style.FontStyle
 import be.pocito.pboard.style.FontStyleTransformer
@@ -80,7 +80,7 @@ class StyleSelector(
      */
     private fun createStyleButton(style: FontStyle): View {
         // Create container for button and preview
-        val container = LinearLayout(context).apply {
+        val container = android.widget.LinearLayout(context).apply {
             layoutParams = GridLayout.LayoutParams().apply {
                 width = 0
                 height = GridLayout.LayoutParams.WRAP_CONTENT
@@ -102,11 +102,11 @@ class StyleSelector(
             
             // Highlight current style
             if (style == currentStyle) {
-                setBackgroundColor(context.resources.getColor(R.color.key_pressed, null))
-                setTextColor(context.resources.getColor(R.color.key_text, null))
+                setBackgroundColor(ContextCompat.getColor(context, R.color.key_pressed))
+                setTextColor(ContextCompat.getColor(context, R.color.key_text))
             } else {
-                setBackgroundColor(context.resources.getColor(R.color.key_normal, null))
-                setTextColor(context.resources.getColor(R.color.key_text, null))
+                setBackgroundColor(ContextCompat.getColor(context, R.color.key_normal))
+                setTextColor(ContextCompat.getColor(context, R.color.key_text))
             }
             
             // Set click listener
@@ -143,8 +143,3 @@ class StyleSelector(
         return FontStyleTransformer.transformText(previewText, style)
     }
 }
-
-/**
- * LinearLayout import helper
- */
-private class LinearLayout(context: Context) : android.widget.LinearLayout(context)

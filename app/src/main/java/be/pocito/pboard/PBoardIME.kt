@@ -22,6 +22,10 @@ import be.pocito.pboard.preferences.KeyboardPreferences
  */
 class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     
+    companion object {
+        private const val KEYCODE_STYLE = -100
+    }
+    
     private var keyboardView: KeyboardView? = null
     private var keyboard: android.inputmethodservice.Keyboard? = null
     private var inputConnection: InputConnection? = null
@@ -33,8 +37,11 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     // Font style management
     private var currentFontStyle: FontStyle = FontStyle.NORMAL
     
-    // Preferences
-    private lateinit var preferences: KeyboardPreferences
+    // Preferences (lazy initialization)
+    private val preferences: KeyboardPreferences by lazy {
+        KeyboardPreferences(this)
+    }
+    private var preferencesInitialized = false
     
     /**
      * Called when the input view is being created.
@@ -73,11 +80,10 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     override fun onStartInput(attribute: EditorInfo?, restarting: Boolean) {
         super.onStartInput(attribute, restarting)
         // Initialize preferences on first input
-        if (!::preferences.isInitialized) {
-            preferences = KeyboardPreferences(this)
-            // Load saved style
+        if (!preferencesInitialized) {
             currentFontStyle = preferences.getCurrentStyle()
             updateStyleIndicator()
+            preferencesInitialized = true
         }
         // Get input connection for sending text
         inputConnection = currentInputConnection
@@ -110,7 +116,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 Keyboard.KEYCODE_SHIFT -> {
                     // TODO: Handle shift key
                 }
-                -100 -> { // Custom style button code
+                KEYCODE_STYLE -> {
                     showStyleSelector()
                 }
                 else -> {
@@ -172,7 +178,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         currentFontStyle = style
         updateStyleIndicator()
         // Save to preferences
-        if (::preferences.isInitialized) {
+        if (preferencesInitialized) {
             preferences.setCurrentStyle(style)
         }
     }
