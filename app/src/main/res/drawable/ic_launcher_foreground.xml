@@ -24,11 +24,9 @@
         android:fillColor="#FFD54F"
         android:pathData="M54,42 C54,42 52,46 52,50 C52,54 53,60 54,60 C55,60 56,54 56,50 C56,46 54,42 54,42 Z" />
     
-    <!-- Accent spark (bright yellow) -->
-    <circle
+    <!-- Accent spark (bright yellow) - small circle as path -->
+    <path
         android:fillColor="#FFEB3B"
-        android:cx="54"
-        android:cy="48"
-        android:r="3" />
+        android:pathData="M54,45 C55.66,45 57,46.34 57,48 C57,49.66 55.66,51 54,51 C52.34,51 51,49.66 51,48 C51,46.34 52.34,45 54,45 Z" />
     
 </vector>
