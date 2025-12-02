@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
-    android:keyWidth="9%p"
+    android:keyWidth="8%p"
     android:keyHeight="56dip"
-    android:horizontalGap="1dip"
-    android:verticalGap="1dip">
+    android:horizontalGap="4dip"
+    android:verticalGap="6dip">
     
     <!-- Row 1 -->
-    <Row>
+    <Row android:keyWidth="8%p">
         <Key android:keyLabel="Q" android:codes="113" />
         <Key android:keyLabel="W" android:codes="119" />
         <Key android:keyLabel="E" android:codes="101" />
@@ -20,7 +20,7 @@
     </Row>
     
     <!-- Row 2 -->
-    <Row>
+    <Row android:keyWidth="8%p">
         <Key android:keyLabel="A" android:codes="97" />
         <Key android:keyLabel="S" android:codes="115" />
         <Key android:keyLabel="D" android:codes="100" />
@@ -33,7 +33,7 @@
     </Row>
     
     <!-- Row 3 -->
-    <Row>
+    <Row android:keyWidth="8%p">
         <Key android:keyLabel="Z" android:codes="122" />
         <Key android:keyLabel="X" android:codes="120" />
         <Key android:keyLabel="C" android:codes="99" />
@@ -45,7 +45,7 @@
     </Row>
     
     <!-- Row 4 -->
-    <Row>
+    <Row android:keyWidth="20%p">
         <Key android:keyLabel="123" android:codes="-2" android:keyWidth="20%p" />
         <Key android:keyLabel=" " android:codes="32" android:keyWidth="40%p" />
         <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="20%p" />
