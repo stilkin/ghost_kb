@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="9%p"
-    android:keyHeight="60dip"
-    android:horizontalGap="2dip"
-    android:verticalGap="2dip">
+    android:keyHeight="56dip"
+    android:horizontalGap="1dip"
+    android:verticalGap="1dip">
     
-    <!-- Row 1: QWERTY -->
+    <!-- Row 1 -->
     <Row>
         <Key android:keyLabel="Q" android:codes="113" />
         <Key android:keyLabel="W" android:codes="119" />
@@ -19,7 +19,7 @@
         <Key android:keyLabel="P" android:codes="112" />
     </Row>
     
-    <!-- Row 2: ASDFGH -->
+    <!-- Row 2 -->
     <Row>
         <Key android:keyLabel="A" android:codes="97" />
         <Key android:keyLabel="S" android:codes="115" />
@@ -32,7 +32,7 @@
         <Key android:keyLabel="L" android:codes="108" />
     </Row>
     
-    <!-- Row 3: ZXCVBN -->
+    <!-- Row 3 -->
     <Row>
         <Key android:keyLabel="Z" android:codes="122" />
         <Key android:keyLabel="X" android:codes="120" />
@@ -41,20 +41,18 @@
         <Key android:keyLabel="B" android:codes="98" />
         <Key android:keyLabel="N" android:codes="110" />
         <Key android:keyLabel="M" android:codes="109" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="20%p" />
     </Row>
     
-    <!-- Row 4: Space and Backspace -->
+    <!-- Row 4 -->
     <Row>
+        <Key android:keyLabel="123" android:codes="-2" android:keyWidth="20%p" />
         <Key android:keyLabel=" " android:codes="32" android:keyWidth="40%p" />
-        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="20%p" />
         <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="20%p" />
     </Row>
     
-    <!-- Row 5: Shift and Style -->
+    <!-- Row 5 -->
     <Row>
-        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="20%p" />
-        <Key android:keyLabel="Style" android:codes="-100" android:keyWidth="60%p" />
-        <Key android:keyLabel="123" android:codes="-2" android:keyWidth="20%p" />
     </Row>
     
 </Keyboard>
