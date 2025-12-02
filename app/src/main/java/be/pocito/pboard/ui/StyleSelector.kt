@@ -1,11 +1,11 @@
 package be.pocito.pboard.ui
 
-import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import be.pocito.pboard.R
@@ -13,10 +13,11 @@ import be.pocito.pboard.style.FontStyle
 import be.pocito.pboard.style.FontStyleTransformer
 
 /**
- * Style Selector Dialog
+ * Style Selector PopupWindow
  * 
  * Displays all available Unicode font styles in a grid layout.
  * Allows users to select a style and provides a callback when selection changes.
+ * Uses PopupWindow instead of Dialog to work properly in IME context.
  */
 class StyleSelector(
     private val context: Context,
@@ -24,18 +25,22 @@ class StyleSelector(
     private val onStyleSelected: (FontStyle) -> Unit
 ) {
     
-    private var dialog: Dialog? = null
+    private var popupWindow: PopupWindow? = null
     
     /**
-     * Show the style selector dialog.
+     * Show the style selector popup.
      */
     fun show() {
-        // Create dialog
-        dialog = Dialog(context, android.R.style.Theme_Material_Light_Dialog)
-        
         // Inflate layout
         val view = LayoutInflater.from(context).inflate(R.layout.style_selector, null)
-        dialog?.setContentView(view)
+        
+        // Create popup window
+        popupWindow = PopupWindow(
+            view,
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+            true  // focusable
+        )
         
         // Set up grid layout with style buttons
         val gridLayout = view.findViewById<GridLayout>(R.id.style_grid)
@@ -47,16 +52,21 @@ class StyleSelector(
             dismiss()
         }
         
-        // Show dialog
-        dialog?.show()
+        // Show popup at the bottom of the screen
+        popupWindow?.showAtLocation(
+            view,
+            android.view.Gravity.BOTTOM,
+            0,
+            0
+        )
     }
     
     /**
-     * Dismiss the dialog.
+     * Dismiss the popup.
      */
     fun dismiss() {
-        dialog?.dismiss()
-        dialog = null
+        popupWindow?.dismiss()
+        popupWindow = null
     }
     
     /**

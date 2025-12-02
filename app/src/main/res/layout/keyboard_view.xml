@@ -36,7 +36,7 @@
     <android.inputmethodservice.KeyboardView
         android:id="@+id/keyboard_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="280dp"
         android:keyTextColor="@color/key_text"
         android:keyTextSize="18sp"
         android:keyBackground="@drawable/key_background"
