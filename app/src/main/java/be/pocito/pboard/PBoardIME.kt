@@ -12,7 +12,6 @@ import android.widget.TextView
 import be.pocito.pboard.R
 import be.pocito.pboard.style.FontStyle
 import be.pocito.pboard.style.FontStyleTransformer
-import be.pocito.pboard.ui.StyleSelector
 import be.pocito.pboard.preferences.KeyboardPreferences
 
 /**
@@ -66,7 +65,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         
         // Set up style button click listener
         styleButton?.setOnClickListener {
-            showStyleSelector()
+            cycleToNextStyle()
         }
         
         // Update style indicator with current style
@@ -118,7 +117,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                     // TODO: Handle shift key
                 }
                 KEYCODE_STYLE -> {
-                    showStyleSelector()
+                    cycleToNextStyle()
                 }
                 else -> {
                     // Regular character key
@@ -192,16 +191,13 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
     
     /**
-     * Show style selector dialog.
+     * Cycle to the next font style in round-robin fashion.
      */
-    private fun showStyleSelector() {
-        val styleSelector = StyleSelector(
-            context = this,
-            currentStyle = currentFontStyle,
-            onStyleSelected = { selectedStyle ->
-                setFontStyle(selectedStyle)
-            }
-        )
-        styleSelector.show()
+    private fun cycleToNextStyle() {
+        val allStyles = FontStyle.values()
+        val currentIndex = allStyles.indexOf(currentFontStyle)
+        val nextIndex = (currentIndex + 1) % allStyles.size
+        val nextStyle = allStyles[nextIndex]
+        setFontStyle(nextStyle)
     }
 }
