@@ -96,26 +96,6 @@ object FontStyles {
     )
     
     /**
-     * Upside Down style
-     * Unicode range: Latin Extended-E, IPA Extensions
-     */
-    val UPSIDE_DOWN: Map<Char, String> = mapOf(
-        'a' to "ɐ", 'b' to "q", 'c' to "ɔ", 'd' to "p", 'e' to "ǝ", 'f' to "ɟ",
-        'g' to "ƃ", 'h' to "ɥ", 'i' to "ᴉ", 'j' to "ɾ", 'k' to "ʞ", 'l' to "l",
-        'm' to "ɯ", 'n' to "u", 'o' to "o", 'p' to "d", 'q' to "b", 'r' to "ɹ",
-        's' to "s", 't' to "ʇ", 'u' to "n", 'v' to "ʌ", 'w' to "ʍ", 'x' to "x",
-        'y' to "ʎ", 'z' to "z",
-        'A' to "∀", 'B' to "q", 'C' to "Ɔ", 'D' to "p", 'E' to "Ǝ", 'F' to "Ⅎ",
-        'G' to "⅁", 'H' to "H", 'I' to "I", 'J' to "ſ", 'K' to "ʞ", 'L' to "˥",
-        'M' to "W", 'N' to "N", 'O' to "O", 'P' to "Ԁ", 'Q' to "b", 'R' to "ᴚ",
-        'S' to "S", 'T' to "⊥", 'U' to "∩", 'V' to "Λ", 'W' to "M", 'X' to "X",
-        'Y' to "⅄", 'Z' to "Z",
-        '0' to "0", '1' to "Ɩ", '2' to "ᄅ", '3' to "Ɛ", '4' to "ㄣ", '5' to "ϛ",
-        '6' to "9", '7' to "ㄥ", '8' to "8", '9' to "6",
-        '.' to "˙", ',' to "'", '!' to "¡", '?' to "¿", '\'' to ",", '"' to "„"
-    )
-    
-    /**
      * Fullwidth style
      * Unicode range: Halfwidth and Fullwidth Forms
      */
@@ -182,15 +162,15 @@ object FontStyles {
      */
     val BUBBLE_BLACK: Map<Char, String> = mapOf(
         'a' to "🅐", 'b' to "🅑", 'c' to "🅒", 'd' to "🅓", 'e' to "🅔", 'f' to "🅕",
-        'g' to "🅖", 'h' to "🅗", 'i' to "🅘", 'j' to "🅙", 'k' to "🅚", 'l' to "��",
+        'g' to "🅖", 'h' to "🅗", 'i' to "🅘", 'j' to "🅙", 'k' to "🅚", 'l' to "🅛",
         'm' to "🅜", 'n' to "🅝", 'o' to "🅞", 'p' to "🅟", 'q' to "🅠", 'r' to "🅡",
         's' to "🅢", 't' to "🅣", 'u' to "🅤", 'v' to "🅥", 'w' to "🅦", 'x' to "🅧",
         'y' to "🅨", 'z' to "🅩",
-        'A' to "🅐", 'B' to "🅑", 'C' to "🅒", 'D' to "🅓", 'E' to "🅔", 'F' to "🅕",
-        'G' to "🅖", 'H' to "🅗", 'I' to "🅘", 'J' to "🅙", 'K' to "🅚", 'L' to "🅛",
-        'M' to "🅜", 'N' to "🅝", 'O' to "🅞", 'P' to "🅟", 'Q' to "🅠", 'R' to "🅡",
-        'S' to "🅢", 'T' to "🅣", 'U' to "🅤", 'V' to "🅥", 'W' to "🅦", 'X' to "��",
-        'Y' to "🅨", 'Z' to "🅩"
+        'A' to "🅰", 'B' to "🅱", 'C' to "🅲", 'D' to "🅳", 'E' to "🅴", 'F' to "🅵",
+        'G' to "🅶", 'H' to "🅷", 'I' to "🅸", 'J' to "🅹", 'K' to "🅺", 'L' to "🅻",
+        'M' to "🅼", 'N' to "🅽", 'O' to "🅾", 'P' to "🅿", 'Q' to "🆀", 'R' to "🆁",
+        'S' to "🆂", 'T' to "🆃", 'U' to "🆄", 'V' to "🆅", 'W' to "🆆", 'X' to "🆇",
+        'Y' to "🆈", 'Z' to "🆉"
     )
     
     /**
@@ -238,7 +218,6 @@ object FontStyles {
             FontStyle.CURSIVE_BOLD -> CURSIVE_BOLD
             FontStyle.FRAKTUR -> FRAKTUR
             FontStyle.FRAKTUR_BOLD -> FRAKTUR_BOLD
-            FontStyle.UPSIDE_DOWN -> UPSIDE_DOWN
             FontStyle.FULLWIDTH -> FULLWIDTH
             FontStyle.SMALL_CAPS -> SMALL_CAPS
             FontStyle.BUBBLE -> BUBBLE

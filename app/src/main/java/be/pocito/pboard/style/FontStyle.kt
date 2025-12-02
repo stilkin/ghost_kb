@@ -12,7 +12,6 @@ enum class FontStyle(val displayName: String) {
     CURSIVE_BOLD("Cursive Bold"),
     FRAKTUR("Fraktur"),
     FRAKTUR_BOLD("Fraktur Bold"),
-    UPSIDE_DOWN("Upside Down"),
     FULLWIDTH("Fullwidth"),
     SMALL_CAPS("Small Caps"),
     BUBBLE("Bubble"),

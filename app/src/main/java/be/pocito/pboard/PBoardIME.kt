@@ -32,7 +32,8 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     
     // UI components
     private var styleIndicator: TextView? = null
-    private var styleButton: Button? = null
+    private var stylePrevButton: Button? = null
+    private var styleNextButton: Button? = null
     
     // Font style management
     private var currentFontStyle: FontStyle = FontStyle.NORMAL
@@ -61,10 +62,14 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         
         // Set up UI components
         styleIndicator = keyboardView.findViewById(R.id.style_indicator)
-        styleButton = keyboardView.findViewById(R.id.style_button)
+        stylePrevButton = keyboardView.findViewById(R.id.style_prev_button)
+        styleNextButton = keyboardView.findViewById(R.id.style_next_button)
         
-        // Set up style button click listener
-        styleButton?.setOnClickListener {
+        // Set up style button click listeners
+        stylePrevButton?.setOnClickListener {
+            cycleToPreviousStyle()
+        }
+        styleNextButton?.setOnClickListener {
             cycleToNextStyle()
         }
         
@@ -199,5 +204,16 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         val nextIndex = (currentIndex + 1) % allStyles.size
         val nextStyle = allStyles[nextIndex]
         setFontStyle(nextStyle)
+    }
+    
+    /**
+     * Cycle to the previous font style in round-robin fashion.
+     */
+    private fun cycleToPreviousStyle() {
+        val allStyles = FontStyle.values()
+        val currentIndex = allStyles.indexOf(currentFontStyle)
+        val prevIndex = (currentIndex - 1 + allStyles.size) % allStyles.size
+        val prevStyle = allStyles[prevIndex]
+        setFontStyle(prevStyle)
     }
 }
