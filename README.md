@@ -163,7 +163,7 @@ Feel free to:
 
 ## References
 
-- [Android IME Documentation](https://developer.android.com/develop/ui/views/inputmethod/creating-an-input-method)
+- [Android IME Documentation](https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method?hl=en)
 - [Unicode Mathematical Symbols](https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols)
 - [YayText Font Styles](https://yaytext.com/styles/)
 
