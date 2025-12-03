@@ -4,15 +4,18 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 
 ## Features
 
-✨ **13 Unicode Font Styles**
+✨ **12 Unicode Font Styles**
 - Double-struck (𝕳𝖊𝖑𝖑𝖔)
 - Cursive (𝓗𝓮𝓵𝓵𝓸)
+- Cursive Bold (𝓗𝓮𝓵𝓵𝓸)
 - Fraktur (ℌ𝔢𝔩𝔩𝔬)
-- Upside Down (ɥǝllo)
+- Fraktur Bold (𝕳𝖊𝖑𝖑𝖔)
 - Fullwidth (Ｈｅｌｌｏ)
 - Small Caps (ʜᴇʟʟᴏ)
 - Bubble (ⓗⓔⓛⓛⓞ)
+- Bubble Black (🅗🅔🅛🅛🅞)
 - Square (🄷🄴🄻🄻🄾)
+- Square Black (🅷🅴🅻🅻🅾)
 - And more!
 
 ⚡ **Fast & Lightweight**
@@ -62,9 +65,9 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 ## Usage
 
 1. **Type normally** - Text appears in your selected style
-2. **Click "Change Style"** - Opens style selector dialog
-3. **Choose a style** - See live preview of each style
-4. **Start typing** - Your text transforms instantly
+2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
+3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
+4. **Your text transforms instantly** - See styled characters as you type
 
 ## Project Structure
 
@@ -93,7 +96,7 @@ PBoard/
 ## Technical Details
 
 ### Supported Android Versions
-- **Min SDK**: Android 10 (API 29)
+- **Min SDK**: Android 11 (API 30)
 - **Target SDK**: Android 15 (API 36)
 - **Language**: Kotlin
 
@@ -106,12 +109,15 @@ PBoard/
 ### Font Coverage
 - **Double-struck**: 95% (includes numbers)
 - **Cursive**: 95% (includes numbers)
+- **Cursive Bold**: 95% (includes numbers)
 - **Fraktur**: 90%
-- **Upside Down**: 70%
+- **Fraktur Bold**: 90%
 - **Fullwidth**: 100%
 - **Small Caps**: 80%
 - **Bubble**: 95%
+- **Bubble Black**: 95%
 - **Square**: 95%
+- **Square Black**: 95%
 
 ## Code Quality
 
@@ -130,11 +136,19 @@ PBoard/
 - Thread-safe preference initialization
 - Proper null safety with Kotlin
 
+## Features Implemented
+
+✅ **Dark Theme** - Sleek dark interface throughout
+✅ **Shift Key** - Full capitalization support
+✅ **Style Navigation** - Previous/Next buttons for easy style switching
+✅ **Custom Icon** - Beautiful flame logo
+✅ **Optimized Layout** - Full-width keyboard with proper spacing
+
 ## Future Enhancements
 
+- Long-press for numbers and symbols
 - Swipe-to-switch styles
 - Additional font styles (bold, italic, monospace, etc.)
-- Dark mode theme
 - Haptic/sound feedback
 - Custom style creation
 - Multiple keyboard layouts
@@ -176,3 +190,11 @@ Contributions are welcome! Feel free to:
 ---
 
 **Made with ❤️ for Unicode enthusiasts**
+
+## Support
+
+If you enjoy Low-Ki and want to support its development, consider buying me a drink:
+
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
+
+Your support helps me continue developing and improving Low-Ki! ☕
