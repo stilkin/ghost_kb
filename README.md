@@ -30,29 +30,19 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 🎯 **Easy to Use**
 - Simple QWERTY layout
 - One-tap style switching
-- Live preview of each style
 - Graceful fallback for incomplete character sets
+
+## Usage
+
+1. **Type normally** - Text appears in your selected style
+2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
+3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
+4. **Your text transforms instantly** - See styled characters as you type
+
 
 ## Installation
 
-### Build from Source
-
-1. **Install Java 11+**
-   ```bash
-   sudo apt install openjdk-11-jdk
-   export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-   ```
-
-2. **Build the APK**
-   ```bash
-   cd /home/srt/AndroidStudioProjects/PBoard
-   ./gradlew assembleDebug
-   ```
-
-3. **Install on device/emulator**
-   ```bash
-   ./gradlew installDebug
-   ```
+If you do not want to build from source and just want to sideload the APK, download it from the `release` folder to your Android phone and install it.
 
 ### First-Time Setup
 
@@ -61,12 +51,28 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 3. Click **"Select Keyboard"** → Choose PBoard as default
 4. Open any text field and start typing!
 
-## Usage
+## Build from Source
 
-1. **Type normally** - Text appears in your selected style
-2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
-3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
-4. **Your text transforms instantly** - See styled characters as you type
+1. **Install Android SDK**
+
+- download from [the Android Studio website](https://developer.android.com/studio)
+
+
+2. **Install Oracle Java JDK**
+
+- download from [the Oracle website](https://www.oracle.com/java/technologies/downloads/#java21)
+- make sure your `JAVA_HOME` variable is set to the folder where you installed it
+
+3. **Build the APK**
+   ```bash
+   cd /home/srt/AndroidStudioProjects/PBoard
+   ./gradlew assembleDebug
+   ```
+
+4. **Install on device/emulator**
+   ```bash
+   ./gradlew installDebug
+   ```
 
 ## Project Structure
 
@@ -89,7 +95,7 @@ PBoard/
 │   ├── drawable/                  # Key styling
 │   └── values/                    # Colors & strings
 └── docs/
-    └── development_plan.md        # Detailed technical plan
+    └── release_guide.md        # Instructions on how to build for release
 ```
 
 ## Technical Details
@@ -117,30 +123,6 @@ PBoard/
 - **Bubble Black**: 95%
 - **Square**: 95%
 
-## Code Quality
-
-✅ **Clean Architecture**
-- Separation of concerns (style, UI, preferences)
-- Minimal dependencies
-- Comprehensive documentation
-
-✅ **Performance**
-- Real-time transformation with no latency
-- Efficient character mapping (O(1) lookups)
-- Lazy initialization of preferences
-
-✅ **Robustness**
-- Graceful fallback for missing characters
-- Thread-safe preference initialization
-- Proper null safety with Kotlin
-
-## Features Implemented
-
-✅ **Dark Theme** - Sleek dark interface throughout
-✅ **Shift Key** - Full capitalization support
-✅ **Style Navigation** - Previous/Next buttons for easy style switching
-✅ **Custom Icon** - Beautiful flame logo
-✅ **Optimized Layout** - Full-width keyboard with proper spacing
 
 ## Future Enhancements
 
@@ -148,7 +130,6 @@ PBoard/
 - Swipe-to-switch styles
 - Additional font styles (bold, italic, monospace, etc.)
 - Haptic/sound feedback
-- Custom style creation
 - Multiple keyboard layouts
 
 ## Troubleshooting
@@ -158,14 +139,14 @@ PBoard/
 - Make sure PBoard is set as the default input method
 
 **Build fails?**
-- Verify Java 11+ is installed: `java -version`
-- Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64`
+- Verify Oracle Java 10+ is installed: `java -version`
+- Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-...`
 - Clean and rebuild: `./gradlew clean assembleDebug`
 
 **Styled text not showing?**
 - Some apps may not support Unicode characters
 - Text will fall back to normal characters automatically
-- Try in Notes, Messages, or Twitter
+- Try in WhatsApp, Signal, Notes, or Twitter
 
 ## License
 
@@ -173,11 +154,12 @@ This project is open source and available under the MIT License.
 
 ## Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! 
+Feel free to:
 - Report bugs
-- Suggest new font styles
+- Suggest features
 - Improve documentation
-- Optimize performance
+- Fix bugs?
 
 ## References
 
