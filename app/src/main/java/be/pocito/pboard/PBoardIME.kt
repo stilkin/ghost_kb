@@ -38,6 +38,9 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     // Font style management
     private var currentFontStyle: FontStyle = FontStyle.NORMAL
     
+    // Shift state management
+    private var isShiftOn: Boolean = false
+    
     // Preferences (lazy initialization)
     private val preferences: KeyboardPreferences by lazy {
         KeyboardPreferences(this)
@@ -117,16 +120,29 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 android.inputmethodservice.Keyboard.KEYCODE_DONE -> {
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
                     ic.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER))
+                    // Reset shift after enter
+                    isShiftOn = false
+                    updateKeyboardShiftState()
                 }
                 android.inputmethodservice.Keyboard.KEYCODE_SHIFT -> {
-                    // TODO: Handle shift key
+                    // Toggle shift state
+                    isShiftOn = !isShiftOn
+                    updateKeyboardShiftState()
                 }
                 KEYCODE_STYLE -> {
                     cycleToNextStyle()
                 }
                 else -> {
                     // Regular character key
-                    val char = primaryCode.toChar()
+                    var char = primaryCode.toChar()
+                    
+                    // Apply shift (uppercase) if shift is on and character is a letter
+                    if (isShiftOn && char.isLetter()) {
+                        char = char.uppercaseChar()
+                        isShiftOn = false
+                        updateKeyboardShiftState()
+                    }
+                    
                     // Transform character based on current font style
                     val transformedText = FontStyleTransformer.transformCharacter(char, currentFontStyle)
                     ic.commitText(transformedText, 1)
@@ -215,5 +231,12 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         val prevIndex = (currentIndex - 1 + allStyles.size) % allStyles.size
         val prevStyle = allStyles[prevIndex]
         setFontStyle(prevStyle)
+    }
+    
+    /**
+     * Update the keyboard visual state to reflect shift on/off.
+     */
+    private fun updateKeyboardShiftState() {
+        keyboardView?.invalidateAllKeys()
     }
 }

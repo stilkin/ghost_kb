@@ -9,18 +9,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
-    <!-- Keyboard colors -->
-    <color name="keyboard_background">#FAFAFA</color>
-    <color name="style_bar_background">#F5F5F5</color>
-    <color name="style_indicator_text">#424242</color>
+    <!-- Keyboard colors (Dark Theme) -->
+    <color name="keyboard_background">#1E1E1E</color>
+    <color name="style_bar_background">#2D2D2D</color>
+    <color name="style_indicator_text">#E0E0E0</color>
     
-    <!-- Key colors -->
-    <color name="key_normal">#FFFFFF</color>
-    <color name="key_pressed">#F0F0F0</color>
-    <color name="key_text">#212121</color>
+    <!-- Key colors (Dark Theme) -->
+    <color name="key_normal">#3A3A3A</color>
+    <color name="key_pressed">#4A4A4A</color>
+    <color name="key_text">#FFFFFF</color>
     
-    <!-- Key preview colors -->
-    <color name="key_preview_background">#333333</color>
-    <color name="key_preview_border">#666666</color>
+    <!-- Key preview colors (Dark Theme) -->
+    <color name="key_preview_background">#1E1E1E</color>
+    <color name="key_preview_border">#4A4A4A</color>
     <color name="key_preview_text">#FFFFFF</color>
 </resources>
