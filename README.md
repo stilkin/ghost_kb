@@ -4,7 +4,7 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 
 ## Features
 
-✨ **12 Unicode Font Styles**
+✨ **11 Unicode Font Styles**
 - Double-struck (𝕳𝖊𝖑𝖑𝖔)
 - Cursive (𝓗𝓮𝓵𝓵𝓸)
 - Cursive Bold (𝓗𝓮𝓵𝓵𝓸)
@@ -15,7 +15,6 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - Bubble (ⓗⓔⓛⓛⓞ)
 - Bubble Black (🅗🅔🅛🅛🅞)
 - Square (🄷🄴🄻🄻🄾)
-- Square Black (🅷🅴🅻🅻🅾)
 - And more!
 
 ⚡ **Fast & Lightweight**
@@ -117,7 +116,6 @@ PBoard/
 - **Bubble**: 95%
 - **Bubble Black**: 95%
 - **Square**: 95%
-- **Square Black**: 95%
 
 ## Code Quality
 
@@ -193,7 +191,7 @@ Contributions are welcome! Feel free to:
 
 ## Support
 
-If you enjoy Low-Ki and want to support its development, consider buying me a drink:
+If you enjoy PBoard and want to support its development, consider buying me a drink:
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
 
