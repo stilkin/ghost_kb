@@ -51,9 +51,9 @@
         android:keyBackground="@drawable/key_background"
         android:keyPreviewLayout="@layout/key_preview"
         android:keyPreviewHeight="60dp"
-        android:keyPreviewOffset="-30dp"
-        android:paddingLeft="2dip"
-        android:paddingRight="2dip"
+        android:keyPreviewOffset="-10dp"
+        android:paddingLeft="0dip"
+        android:paddingRight="0dip"
         android:paddingTop="4dip"
         android:paddingBottom="4dip" />
         

@@ -34,20 +34,20 @@
     
     <!-- Row 3 -->
     <Row android:keyWidth="9%p">
-        <Key android:keyLabel="Z" android:codes="122" android:horizontalGap="5%"/>
+        <Key android:keyLabel="Z" android:codes="122" android:horizontalGap="7%"/>
         <Key android:keyLabel="X" android:codes="120" />
         <Key android:keyLabel="C" android:codes="99" />
         <Key android:keyLabel="V" android:codes="118" />
         <Key android:keyLabel="B" android:codes="98" />
         <Key android:keyLabel="N" android:codes="110" />
         <Key android:keyLabel="M" android:codes="109" />
-        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="19%p" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="17%p" />
     </Row>
     
     <!-- Row 4 -->
     <Row android:keyWidth="18%p">
-        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="29%p" />
-        <Key android:keyLabel=" " android:codes="32" android:keyWidth="49%p" />
+        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="19%p" />
+        <Key android:keyLabel=" " android:codes="32" android:keyWidth="59%p" />
         <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="19%p" />
     </Row>
     
