@@ -30,7 +30,6 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 🎯 **Easy to Use**
 - Simple QWERTY layout
 - One-tap style switching
-- Live preview of each style
 - Graceful fallback for incomplete character sets
 
 ## Installation
@@ -89,7 +88,7 @@ PBoard/
 │   ├── drawable/                  # Key styling
 │   └── values/                    # Colors & strings
 └── docs/
-    └── development_plan.md        # Detailed technical plan
+    └── release_guide.md        # Instructions on how to build for release
 ```
 
 ## Technical Details
@@ -117,30 +116,6 @@ PBoard/
 - **Bubble Black**: 95%
 - **Square**: 95%
 
-## Code Quality
-
-✅ **Clean Architecture**
-- Separation of concerns (style, UI, preferences)
-- Minimal dependencies
-- Comprehensive documentation
-
-✅ **Performance**
-- Real-time transformation with no latency
-- Efficient character mapping (O(1) lookups)
-- Lazy initialization of preferences
-
-✅ **Robustness**
-- Graceful fallback for missing characters
-- Thread-safe preference initialization
-- Proper null safety with Kotlin
-
-## Features Implemented
-
-✅ **Dark Theme** - Sleek dark interface throughout
-✅ **Shift Key** - Full capitalization support
-✅ **Style Navigation** - Previous/Next buttons for easy style switching
-✅ **Custom Icon** - Beautiful flame logo
-✅ **Optimized Layout** - Full-width keyboard with proper spacing
 
 ## Future Enhancements
 
@@ -148,7 +123,6 @@ PBoard/
 - Swipe-to-switch styles
 - Additional font styles (bold, italic, monospace, etc.)
 - Haptic/sound feedback
-- Custom style creation
 - Multiple keyboard layouts
 
 ## Troubleshooting
@@ -158,14 +132,14 @@ PBoard/
 - Make sure PBoard is set as the default input method
 
 **Build fails?**
-- Verify Java 11+ is installed: `java -version`
-- Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64`
+- Verify Oracle Java 10+ is installed: `java -version`
+- Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-...`
 - Clean and rebuild: `./gradlew clean assembleDebug`
 
 **Styled text not showing?**
 - Some apps may not support Unicode characters
 - Text will fall back to normal characters automatically
-- Try in Notes, Messages, or Twitter
+- Try in WhatsApp, Signal, Notes, or Twitter
 
 ## License
 
@@ -173,11 +147,12 @@ This project is open source and available under the MIT License.
 
 ## Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! 
+Feel free to:
 - Report bugs
-- Suggest new font styles
+- Suggest features
 - Improve documentation
-- Optimize performance
+- Fix bugs?
 
 ## References
 
