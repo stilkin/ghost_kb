@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
-    android:keyWidth="8%p"
+    android:keyWidth="9%p"
     android:keyHeight="56dip"
-    android:horizontalGap="4dip"
+    android:horizontalGap="1%p"
     android:verticalGap="6dip">
     
     <!-- Row 1 -->
-    <Row android:keyWidth="8%p">
+    <Row android:keyWidth="9%p">
         <Key android:keyLabel="Q" android:codes="113" />
         <Key android:keyLabel="W" android:codes="119" />
         <Key android:keyLabel="E" android:codes="101" />
@@ -20,7 +20,7 @@
     </Row>
     
     <!-- Row 2 -->
-    <Row android:keyWidth="8%p">
+    <Row android:keyWidth="9%p">
         <Key android:keyLabel="A" android:codes="97" android:horizontalGap="5%"/>
         <Key android:keyLabel="S" android:codes="115" />
         <Key android:keyLabel="D" android:codes="100" />
@@ -33,7 +33,7 @@
     </Row>
     
     <!-- Row 3 -->
-    <Row android:keyWidth="8%p">
+    <Row android:keyWidth="9%p">
         <Key android:keyLabel="Z" android:codes="122" android:horizontalGap="5%"/>
         <Key android:keyLabel="X" android:codes="120" />
         <Key android:keyLabel="C" android:codes="99" />
@@ -41,14 +41,14 @@
         <Key android:keyLabel="B" android:codes="98" />
         <Key android:keyLabel="N" android:codes="110" />
         <Key android:keyLabel="M" android:codes="109" />
-        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="15%p" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="19%p" />
     </Row>
     
     <!-- Row 4 -->
-    <Row android:keyWidth="20%p">
-        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="20%p" />
+    <Row android:keyWidth="18%p">
+        <Key android:keyLabel="⇧" android:codes="-1" />
         <Key android:keyLabel=" " android:codes="32" android:keyWidth="40%p" />
-        <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="20%p" />
+        <Key android:keyLabel="↵" android:codes="-4" />
     </Row>
     
     <!-- Row 5 -->
