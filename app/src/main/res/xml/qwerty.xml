@@ -21,7 +21,7 @@
     
     <!-- Row 2 -->
     <Row android:keyWidth="8%p">
-        <Key android:keyLabel="A" android:codes="97" />
+        <Key android:keyLabel="A" android:codes="97" android:horizontalGap="5%"/>
         <Key android:keyLabel="S" android:codes="115" />
         <Key android:keyLabel="D" android:codes="100" />
         <Key android:keyLabel="F" android:codes="102" />
@@ -34,14 +34,14 @@
     
     <!-- Row 3 -->
     <Row android:keyWidth="8%p">
-        <Key android:keyLabel="Z" android:codes="122" />
+        <Key android:keyLabel="Z" android:codes="122" android:horizontalGap="5%"/>
         <Key android:keyLabel="X" android:codes="120" />
         <Key android:keyLabel="C" android:codes="99" />
         <Key android:keyLabel="V" android:codes="118" />
         <Key android:keyLabel="B" android:codes="98" />
         <Key android:keyLabel="N" android:codes="110" />
         <Key android:keyLabel="M" android:codes="109" />
-        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="20%p" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="15%p" />
     </Row>
     
     <!-- Row 4 -->
