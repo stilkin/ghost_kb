@@ -13,8 +13,8 @@ android {
         applicationId = "be.pocito.pboard"
         minSdk = 30
         targetSdk = 36
-        versionCode = 6
-        versionName = "1.5"
+        versionCode = 9
+        versionName = "1.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
