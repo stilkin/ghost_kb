@@ -16,8 +16,7 @@ enum class FontStyle(val displayName: String) {
     SMALL_CAPS("Small Caps"),
     BUBBLE("Bubble"),
     BUBBLE_BLACK("Bubble Black"),
-    SQUARE("Square"),
-    SQUARE_BLACK("Square Black");
+    SQUARE("Square");
     
     companion object {
         /**
