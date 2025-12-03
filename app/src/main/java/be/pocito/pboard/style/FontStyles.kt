@@ -127,7 +127,7 @@ object FontStyles {
     val SMALL_CAPS: Map<Char, String> = mapOf(
         'a' to "ᴀ", 'b' to "ʙ", 'c' to "ᴄ", 'd' to "ᴅ", 'e' to "ᴇ", 'f' to "ꜰ",
         'g' to "ɢ", 'h' to "ʜ", 'i' to "ɪ", 'j' to "ᴊ", 'k' to "ᴋ", 'l' to "ʟ",
-        'm' to "ᴍ", 'n' to "ɴ", 'o' to "ᴏ", 'p' to "ᴘ", 'q' to "ᴘ", 'r' to "ʀ",
+        'm' to "ᴍ", 'n' to "ɴ", 'o' to "ᴏ", 'p' to "ᴘ", 'q' to "ǫ", 'r' to "ʀ",
         's' to "ꜱ", 't' to "ᴛ", 'u' to "ᴜ", 'v' to "ᴠ", 'w' to "ᴡ", 'x' to "x",
         'y' to "ʏ", 'z' to "ᴢ",
         'A' to "A", 'B' to "B", 'C' to "C", 'D' to "D", 'E' to "E", 'F' to "F",
@@ -190,22 +190,6 @@ object FontStyles {
         'Y' to "🅈", 'Z' to "🅉"
     )
     
-    /**
-     * Square Black style (dark)
-     * Unicode range: Enclosed Alphanumeric Supplement
-     */
-    val SQUARE_BLACK: Map<Char, String> = mapOf(
-        'a' to "🅰", 'b' to "🅱", 'c' to "🅲", 'd' to "🅳", 'e' to "🅴", 'f' to "🅵",
-        'g' to "🅶", 'h' to "🅷", 'i' to "🅸", 'j' to "🅹", 'k' to "🅺", 'l' to "🅻",
-        'm' to "🅼", 'n' to "🅽", 'o' to "🅾", 'p' to "🅿", 'q' to "🆀", 'r' to "🆁",
-        's' to "🆂", 't' to "🆃", 'u' to "🆄", 'v' to "🆅", 'w' to "🆆", 'x' to "🆇",
-        'y' to "🆈", 'z' to "🆉",
-        'A' to "🅰", 'B' to "🅱", 'C' to "🅲", 'D' to "🅳", 'E' to "🅴", 'F' to "🅵",
-        'G' to "🅶", 'H' to "🅷", 'I' to "🅸", 'J' to "🅹", 'K' to "🅺", 'L' to "🅻",
-        'M' to "🅼", 'N' to "🅽", 'O' to "🅾", 'P' to "🅿", 'Q' to "🆀", 'R' to "🆁",
-        'S' to "🆂", 'T' to "🆃", 'U' to "🆄", 'V' to "🆅", 'W' to "🆆", 'X' to "🆇",
-        'Y' to "🆈", 'Z' to "🆉"
-    )
     
     /**
      * Get the character mapping for a specific font style.
@@ -223,7 +207,6 @@ object FontStyles {
             FontStyle.BUBBLE -> BUBBLE
             FontStyle.BUBBLE_BLACK -> BUBBLE_BLACK
             FontStyle.SQUARE -> SQUARE
-            FontStyle.SQUARE_BLACK -> SQUARE_BLACK
         }
     }
 }
