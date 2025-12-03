@@ -46,7 +46,7 @@
     
     <!-- Row 4 -->
     <Row android:keyWidth="20%p">
-        <Key android:keyLabel="123" android:codes="-2" android:keyWidth="20%p" />
+        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="20%p" />
         <Key android:keyLabel=" " android:codes="32" android:keyWidth="40%p" />
         <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="20%p" />
     </Row>
