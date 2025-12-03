@@ -2,9 +2,11 @@ package be.pocito.pboard
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 /**
@@ -43,6 +45,12 @@ class MainActivity : Activity() {
         selectKeyboardButton.setOnClickListener {
             openInputMethodSelector()
         }
+        
+        // Ko-fi support link
+        val kofiLink = findViewById<TextView>(R.id.kofi_link)
+        kofiLink.setOnClickListener {
+            openKofiPage()
+        }
     }
     
     /**
@@ -74,6 +82,22 @@ class MainActivity : Activity() {
                 this,
                 "Could not open input method picker. Please select PBoard in Settings > Languages & input > Keyboard",
                 Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+    
+    /**
+     * Open Ko-fi support page in browser.
+     */
+    private fun openKofiPage() {
+        try {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ko-fi.com/stilkin"))
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(
+                this,
+                "Could not open Ko-fi page",
+                Toast.LENGTH_SHORT
             ).show()
         }
     }

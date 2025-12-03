@@ -75,7 +75,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/font_styles_examples"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp" />
+        
+        <!-- Support Link -->
+        <TextView
+            android:id="@+id/kofi_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="☕ Support on Ko-fi"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="#0066cc"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
             
     </LinearLayout>
     
