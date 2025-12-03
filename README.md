@@ -32,26 +32,17 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - One-tap style switching
 - Graceful fallback for incomplete character sets
 
+## Usage
+
+1. **Type normally** - Text appears in your selected style
+2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
+3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
+4. **Your text transforms instantly** - See styled characters as you type
+
+
 ## Installation
 
-### Build from Source
-
-1. **Install Java 11+**
-   ```bash
-   sudo apt install openjdk-11-jdk
-   export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-   ```
-
-2. **Build the APK**
-   ```bash
-   cd /home/srt/AndroidStudioProjects/PBoard
-   ./gradlew assembleDebug
-   ```
-
-3. **Install on device/emulator**
-   ```bash
-   ./gradlew installDebug
-   ```
+If you do not want to build from source and just want to sideload the APK, download it from the `release` folder to your Android phone and install it.
 
 ### First-Time Setup
 
@@ -60,12 +51,28 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 3. Click **"Select Keyboard"** → Choose PBoard as default
 4. Open any text field and start typing!
 
-## Usage
+## Build from Source
 
-1. **Type normally** - Text appears in your selected style
-2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
-3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
-4. **Your text transforms instantly** - See styled characters as you type
+1. **Install Android SDK**
+
+- download from [the Android Studio website](https://developer.android.com/studio)
+
+
+2. **Install Oracle Java JDK**
+
+- download from [the Oracle website](https://www.oracle.com/java/technologies/downloads/#java21)
+- make sure your `JAVA_HOME` variable is set to the folder where you installed it
+
+3. **Build the APK**
+   ```bash
+   cd /home/srt/AndroidStudioProjects/PBoard
+   ./gradlew assembleDebug
+   ```
+
+4. **Install on device/emulator**
+   ```bash
+   ./gradlew installDebug
+   ```
 
 ## Project Structure
 
