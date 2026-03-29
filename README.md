@@ -150,7 +150,11 @@ PBoard/
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+
+**Free for non-commercial use.** You may use, modify, and distribute this software for personal, educational, or other noncommercial purposes. Commercial use requires a separate agreement with the author.
+
+See the [LICENSE](LICENSE) file for full terms, or visit https://polyformproject.org/licenses/noncommercial/1.0.0/
 
 ## Contributing
 
