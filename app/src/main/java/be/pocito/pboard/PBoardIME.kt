@@ -15,6 +15,8 @@ import be.pocito.pboard.preferences.KeyboardPreferences
 
 class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
 
+    private enum class ShiftState { OFF, ONE_SHOT, CAPS_LOCK }
+
     companion object {
         private const val KEYCODE_STYLE = -100
     }
@@ -27,7 +29,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     private var styleNextButton: Button? = null
 
     private var currentFontStyle: FontStyle = FontStyle.NORMAL
-    private var isShiftOn: Boolean = false
+    private var shiftState: ShiftState = ShiftState.OFF
 
     private val preferences: KeyboardPreferences by lazy { KeyboardPreferences(this) }
 
@@ -63,18 +65,26 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
             Keyboard.KEYCODE_DELETE -> ic.sendKey(KeyEvent.KEYCODE_DEL)
             Keyboard.KEYCODE_DONE -> {
                 ic.sendKey(KeyEvent.KEYCODE_ENTER)
-                isShiftOn = false
+                shiftState = ShiftState.OFF
                 updateKeyboardShiftState()
             }
             Keyboard.KEYCODE_SHIFT -> {
-                isShiftOn = !isShiftOn
+                shiftState = when (shiftState) {
+                    ShiftState.OFF       -> ShiftState.ONE_SHOT
+                    ShiftState.ONE_SHOT  -> ShiftState.CAPS_LOCK
+                    ShiftState.CAPS_LOCK -> ShiftState.OFF
+                }
                 updateKeyboardShiftState()
             }
             KEYCODE_STYLE -> cycleStyle(forward = true)
             else -> {
                 var char = primaryCode.toChar()
-                if (isShiftOn && char.isLetter()) {
+                if (shiftState != ShiftState.OFF && char.isLetter()) {
                     char = char.uppercaseChar()
+                    if (shiftState == ShiftState.ONE_SHOT) {
+                        shiftState = ShiftState.OFF
+                        updateKeyboardShiftState()
+                    }
                 }
                 ic.commitText(FontStyleTransformer.transformCharacter(char, currentFontStyle), 1)
             }
@@ -114,6 +124,13 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
 
     private fun updateKeyboardShiftState() {
+        // Update the shift key label and the keyboard's shifted state for visual feedback
+        val shiftKey = keyboard?.keys?.find { it.codes[0] == Keyboard.KEYCODE_SHIFT }
+        shiftKey?.label = when (shiftState) {
+            ShiftState.OFF, ShiftState.ONE_SHOT -> "⇧"
+            ShiftState.CAPS_LOCK               -> "⇪"
+        }
+        keyboard?.isShifted = shiftState != ShiftState.OFF
         keyboardView?.invalidateAllKeys()
     }
 
