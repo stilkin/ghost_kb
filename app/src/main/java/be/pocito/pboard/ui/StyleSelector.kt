@@ -19,20 +19,27 @@ import be.pocito.pboard.style.FontStyleTransformer
 class StyleSelector(
     private val context: Context,
     private val currentStyle: FontStyle,
-    private val onStyleSelected: (FontStyle) -> Unit
+    private val onStyleSelected: (FontStyle) -> Unit,
 ) {
+    companion object {
+        private const val ITEM_MARGIN_DP = 8
+        private const val ITEM_PADDING_DP = 4
+        private const val BUTTON_TEXT_SIZE_SP = 12f
+        private const val PREVIEW_TEXT_SIZE_SP = 14f
+    }
 
     private var popupWindow: PopupWindow? = null
 
     fun show() {
         val view = LayoutInflater.from(context).inflate(R.layout.style_selector, null)
 
-        popupWindow = PopupWindow(
-            view,
-            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
-            true
-        )
+        popupWindow =
+            PopupWindow(
+                view,
+                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                true,
+            )
 
         val gridLayout = view.findViewById<GridLayout>(R.id.style_grid)
         setupStyleGrid(gridLayout)
@@ -55,40 +62,49 @@ class StyleSelector(
     }
 
     private fun createStyleButton(style: FontStyle): View {
-        val container = android.widget.LinearLayout(context).apply {
-            layoutParams = GridLayout.LayoutParams().apply {
-                width = 0
-                height = GridLayout.LayoutParams.WRAP_CONTENT
-                columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
-                setMargins(8, 8, 8, 8)
+        val container =
+            android.widget.LinearLayout(context).apply {
+                layoutParams =
+                    GridLayout.LayoutParams().apply {
+                        width = 0
+                        height = GridLayout.LayoutParams.WRAP_CONTENT
+                        columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+                        setMargins(ITEM_MARGIN_DP, ITEM_MARGIN_DP, ITEM_MARGIN_DP, ITEM_MARGIN_DP)
+                    }
+                orientation = android.widget.LinearLayout.VERTICAL
+                gravity = android.view.Gravity.CENTER
             }
-            orientation = android.widget.LinearLayout.VERTICAL
-            gravity = android.view.Gravity.CENTER
-        }
 
-        val button = Button(context).apply {
-            layoutParams = android.widget.LinearLayout.LayoutParams(
-                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            text = style.displayName
-            textSize = 12f
-            val bgColor = if (style == currentStyle) R.color.key_pressed else R.color.key_normal
-            setBackgroundColor(ContextCompat.getColor(context, bgColor))
-            setTextColor(ContextCompat.getColor(context, R.color.key_text))
-            setOnClickListener { onStyleSelected(style); dismiss() }
-        }
+        val button =
+            Button(context).apply {
+                layoutParams =
+                    android.widget.LinearLayout.LayoutParams(
+                        android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                        android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+                    )
+                text = style.displayName
+                textSize = BUTTON_TEXT_SIZE_SP
+                val bgColor = if (style == currentStyle) R.color.key_pressed else R.color.key_normal
+                setBackgroundColor(ContextCompat.getColor(context, bgColor))
+                setTextColor(ContextCompat.getColor(context, R.color.key_text))
+                setOnClickListener {
+                    onStyleSelected(style)
+                    dismiss()
+                }
+            }
 
-        val preview = TextView(context).apply {
-            layoutParams = android.widget.LinearLayout.LayoutParams(
-                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            text = FontStyleTransformer.transformText("Hello", style)
-            textSize = 14f
-            gravity = android.view.Gravity.CENTER
-            setPadding(4, 4, 4, 4)
-        }
+        val preview =
+            TextView(context).apply {
+                layoutParams =
+                    android.widget.LinearLayout.LayoutParams(
+                        android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
+                        android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+                    )
+                text = FontStyleTransformer.transformText("Hello", style)
+                textSize = PREVIEW_TEXT_SIZE_SP
+                gravity = android.view.Gravity.CENTER
+                setPadding(ITEM_PADDING_DP, ITEM_PADDING_DP, ITEM_PADDING_DP, ITEM_PADDING_DP)
+            }
 
         container.addView(button)
         container.addView(preview)
