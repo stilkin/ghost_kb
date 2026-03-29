@@ -75,8 +75,6 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 var char = primaryCode.toChar()
                 if (isShiftOn && char.isLetter()) {
                     char = char.uppercaseChar()
-                    isShiftOn = false
-                    updateKeyboardShiftState()
                 }
                 ic.commitText(FontStyleTransformer.transformCharacter(char, currentFontStyle), 1)
             }
