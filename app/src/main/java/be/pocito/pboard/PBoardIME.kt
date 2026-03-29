@@ -82,6 +82,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
 
     override fun onText(text: CharSequence?) {
+        if (text.isNullOrEmpty()) return
         currentInputConnection?.commitText(
             FontStyleTransformer.transformText(text.toString(), currentFontStyle), 1
         )
