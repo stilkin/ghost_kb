@@ -58,6 +58,10 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         restarting: Boolean,
     ) {
         super.onStartInput(attribute, restarting)
+        if (!restarting && shiftState == ShiftState.ONE_SHOT) {
+            shiftState = ShiftState.OFF
+            updateKeyboardShiftState()
+        }
         currentFontStyle = preferences.getCurrentStyle()
         updateStyleIndicator()
     }
