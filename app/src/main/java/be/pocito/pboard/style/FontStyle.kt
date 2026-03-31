@@ -1,10 +1,5 @@
 package be.pocito.pboard.style
 
-/**
- * Enum representing all supported Unicode font styles.
- * 
- * Each style has a unique identifier and display name.
- */
 enum class FontStyle(val displayName: String) {
     NORMAL("Normal"),
     DOUBLE_STRUCK("Double-struck"),
@@ -17,18 +12,9 @@ enum class FontStyle(val displayName: String) {
     BUBBLE("Bubble"),
     BUBBLE_BLACK("Bubble Black"),
     SQUARE("Square");
-    
+
     companion object {
-        /**
-         * Get all styles as a list for UI display.
-         */
         fun getAllStyles(): List<FontStyle> = values().toList()
-        
-        /**
-         * Get style by display name.
-         */
-        fun getByDisplayName(name: String): FontStyle? {
-            return values().find { it.displayName == name }
-        }
+        fun getByDisplayName(name: String): FontStyle? = values().find { it.displayName == name }
     }
 }

@@ -150,8 +150,11 @@ PBoard/
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
-See the `LICENSE` file in the project root for the full license text and terms.
+This project is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
+
+**Free for non-commercial use.** You may use, modify, and distribute this software for personal, educational, or other noncommercial purposes. Commercial use requires a separate agreement with the author.
+
+See the [LICENSE](LICENSE) file for full terms, or visit https://polyformproject.org/licenses/noncommercial/1.0.0/
 
 ## Contributing
 
@@ -164,7 +167,7 @@ Feel free to:
 
 ## References
 
-- [Android IME Documentation](https://developer.android.com/develop/ui/views/touch-and-input/creating-input-method?hl=en)
+- [Android IME Documentation](https://developer.android.com/develop/ui/views/inputmethod/creating-an-input-method)
 - [Unicode Mathematical Symbols](https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols)
 - [YayText Font Styles](https://yaytext.com/styles/)
 
