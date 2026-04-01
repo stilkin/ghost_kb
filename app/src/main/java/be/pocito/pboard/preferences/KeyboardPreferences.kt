@@ -5,11 +5,11 @@ import android.content.SharedPreferences
 import be.pocito.pboard.style.FontStyle
 
 class KeyboardPreferences(context: Context) {
-
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
-        PREFERENCES_NAME,
-        Context.MODE_PRIVATE
-    )
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences(
+            PREFERENCES_NAME,
+            Context.MODE_PRIVATE,
+        )
 
     companion object {
         private const val PREFERENCES_NAME = "pboard_keyboard_prefs"
@@ -17,6 +17,7 @@ class KeyboardPreferences(context: Context) {
         private const val DEFAULT_STYLE = "NORMAL"
     }
 
+    @Suppress("SwallowedException")
     fun getCurrentStyle(): FontStyle {
         val styleName = sharedPreferences.getString(KEY_CURRENT_STYLE, DEFAULT_STYLE) ?: DEFAULT_STYLE
         return try {

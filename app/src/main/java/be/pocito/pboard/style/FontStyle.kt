@@ -11,10 +11,12 @@ enum class FontStyle(val displayName: String) {
     SMALL_CAPS("Small Caps"),
     BUBBLE("Bubble"),
     BUBBLE_BLACK("Bubble Black"),
-    SQUARE("Square");
+    SQUARE("Square"),
+    ;
 
     companion object {
         fun getAllStyles(): List<FontStyle> = values().toList()
+
         fun getByDisplayName(name: String): FontStyle? = values().find { it.displayName == name }
     }
 }
