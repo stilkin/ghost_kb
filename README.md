@@ -126,10 +126,10 @@ PBoard/
 
 ## Future Enhancements
 
-- Long-press for alternate characters
-- Swipe-to-switch styles
+- Long-press for alternate characters (accents, common symbols)
 - Additional font styles (bold, italic, monospace, etc.)
 - Haptic/sound feedback
+- Emoji support
 
 ## Troubleshooting
 
