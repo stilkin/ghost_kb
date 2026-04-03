@@ -1,16 +1,16 @@
 <resources>
     <!-- App name -->
-    <string name="app_name">Low-Ki</string>
-    
+    <string name="app_name">Ghost</string>
+
     <!-- IME service -->
-    <string name="ime_name">Low-Ki Keyboard</string>
+    <string name="ime_name">Ghost Keyboard</string>
     <string name="subtype_en_us">English (US)</string>
     
     <!-- Main activity -->
-    <string name="app_description">Low-Ki is a minimalist keyboard with Unicode font styles. Transform your text into beautiful fonts like double-struck, cursive, fraktur, bubble text, and more!</string>
+    <string name="app_description">Ghost is a minimalist keyboard with Unicode font styles. Transform your text into beautiful fonts like double-struck, cursive, fraktur, bubble text, and more!</string>
     <string name="enable_keyboard">Enable Keyboard</string>
     <string name="select_keyboard">Select Keyboard</string>
-    <string name="instructions">Instructions:\n1. Click "Enable Keyboard" to open settings\n2. Enable "Low-Ki Keyboard"\n3. Click "Select Keyboard" to choose it as your input method\n4. Start typing in any app to use Low-Ki!</string>
+    <string name="instructions">Instructions:\n1. Click "Enable Keyboard" to open settings\n2. Enable "Ghost Keyboard"\n3. Click "Select Keyboard" to choose it as your input method\n4. Start typing in any app to use Ghost!</string>
     
     <!-- Font styles -->
     <string name="font_styles_preview">Font Styles Preview:</string>
