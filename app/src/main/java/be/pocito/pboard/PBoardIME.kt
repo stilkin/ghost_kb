@@ -131,7 +131,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     fun getCurrentFontStyle(): FontStyle = currentFontStyle
 
     private fun cycleStyle(forward: Boolean) {
-        val styles = FontStyle.values()
+        val styles = FontStyle.entries
         val next = (styles.indexOf(currentFontStyle) + if (forward) 1 else styles.size - 1) % styles.size
         setFontStyle(styles[next])
     }

@@ -1,10 +1,13 @@
 package be.pocito.pboard.ui
 
 import android.content.Context
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -36,8 +39,8 @@ class StyleSelector(
         popupWindow =
             PopupWindow(
                 view,
-                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
                 true,
             )
 
@@ -46,7 +49,7 @@ class StyleSelector(
 
         view.findViewById<Button>(R.id.close_button).setOnClickListener { dismiss() }
 
-        popupWindow?.showAtLocation(view, android.view.Gravity.BOTTOM, 0, 0)
+        popupWindow?.showAtLocation(view, Gravity.BOTTOM, 0, 0)
     }
 
     fun dismiss() {
@@ -56,14 +59,14 @@ class StyleSelector(
 
     private fun setupStyleGrid(gridLayout: GridLayout) {
         gridLayout.removeAllViews()
-        for (style in FontStyle.getAllStyles()) {
+        for (style in FontStyle.entries) {
             gridLayout.addView(createStyleButton(style))
         }
     }
 
     private fun createStyleButton(style: FontStyle): View {
         val container =
-            android.widget.LinearLayout(context).apply {
+            LinearLayout(context).apply {
                 layoutParams =
                     GridLayout.LayoutParams().apply {
                         width = 0
@@ -71,16 +74,16 @@ class StyleSelector(
                         columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
                         setMargins(ITEM_MARGIN_DP, ITEM_MARGIN_DP, ITEM_MARGIN_DP, ITEM_MARGIN_DP)
                     }
-                orientation = android.widget.LinearLayout.VERTICAL
-                gravity = android.view.Gravity.CENTER
+                orientation = LinearLayout.VERTICAL
+                gravity = Gravity.CENTER
             }
 
         val button =
             Button(context).apply {
                 layoutParams =
-                    android.widget.LinearLayout.LayoutParams(
-                        android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                        android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
                     )
                 text = style.displayName
                 textSize = BUTTON_TEXT_SIZE_SP
@@ -96,13 +99,13 @@ class StyleSelector(
         val preview =
             TextView(context).apply {
                 layoutParams =
-                    android.widget.LinearLayout.LayoutParams(
-                        android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                        android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
                     )
                 text = FontStyleTransformer.transformText("Hello", style)
                 textSize = PREVIEW_TEXT_SIZE_SP
-                gravity = android.view.Gravity.CENTER
+                gravity = Gravity.CENTER
                 setPadding(ITEM_PADDING_DP, ITEM_PADDING_DP, ITEM_PADDING_DP, ITEM_PADDING_DP)
             }
 
