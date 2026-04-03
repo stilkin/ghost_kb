@@ -28,8 +28,8 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - Restored when you reopen the keyboard
 
 🎯 **Easy to Use**
-- Simple QWERTY layout
-- One-tap style switching
+- Simple QWERTY layout with dedicated numbers/symbols page
+- Cycle through styles with ◀/▶ buttons
 - Graceful fallback for incomplete character sets
 
 ## Usage
@@ -37,7 +37,8 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 1. **Type normally** - Text appears in your selected style
 2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
 3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
-4. **Your text transforms instantly** - See styled characters as you type
+4. **Numbers & symbols** - Tap `123` to switch to numbers/symbols, `ABC` to switch back
+5. **Your text transforms instantly** - See styled characters as you type
 
 
 ## Installation
@@ -126,11 +127,10 @@ PBoard/
 
 ## Future Enhancements
 
-- Long-press for numbers and symbols
+- Long-press for alternate characters
 - Swipe-to-switch styles
 - Additional font styles (bold, italic, monospace, etc.)
 - Haptic/sound feedback
-- Multiple keyboard layouts
 
 ## Troubleshooting
 

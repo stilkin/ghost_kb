@@ -258,7 +258,7 @@ For future updates, increment the version in `app/build.gradle.kts`:
 android {
     defaultConfig {
         applicationId = "be.pocito.pboard"
-        minSdk = 29
+        minSdk = 30
         targetSdk = 36
         versionCode = 2  // Increment for each release
         versionName = "1.1"  // User-facing version (e.g., "1.0", "1.1", "2.0")
@@ -348,7 +348,7 @@ Before each release:
 - [ ] Test on multiple devices (phone, tablet, different screen sizes)
 - [ ] Test keyboard in multiple apps (Notes, Messages, Twitter, Email, etc.)
 - [ ] Check for crashes in logcat
-- [ ] Verify all 13 font styles work correctly
+- [ ] Verify all 11 font styles work correctly
 - [ ] Test style persistence (select style, close, reopen)
 - [ ] Build release APK: `./gradlew assembleRelease`
 - [ ] Sign APK with keystore
