@@ -137,7 +137,13 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
 
     private fun updateStyleIndicator() {
-        styleIndicator?.text = currentFontStyle.displayName
+        val name = currentFontStyle.displayName
+        if (currentFontStyle == FontStyle.NORMAL) {
+            styleIndicator?.text = name
+        } else {
+            val preview = FontStyleTransformer.transformText("ABC", currentFontStyle)
+            styleIndicator?.text = "$name · $preview"
+        }
     }
 
     private fun updateKeyboardShiftState() {
