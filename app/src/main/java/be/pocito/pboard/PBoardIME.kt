@@ -18,10 +18,14 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
 
     companion object {
         private const val KEYCODE_STYLE = -100
+        private const val KEYCODE_SYMBOLS = -101
     }
 
     private var keyboardView: KeyboardView? = null
     private var keyboard: Keyboard? = null
+    private var qwertyKeyboard: Keyboard? = null
+    private var symbolsKeyboard: Keyboard? = null
+    private var isSymbolsMode = false
 
     private var styleIndicator: TextView? = null
     private var stylePrevButton: Button? = null
@@ -35,7 +39,10 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     override fun onCreateInputView(): View {
         val view = layoutInflater.inflate(R.layout.keyboard_view, null) as View
 
-        keyboard = Keyboard(this, R.xml.qwerty)
+        qwertyKeyboard = Keyboard(this, R.xml.qwerty)
+        symbolsKeyboard = Keyboard(this, R.xml.symbols)
+        keyboard = qwertyKeyboard
+        isSymbolsMode = false
         keyboardView =
             view.findViewById<KeyboardView>(R.id.keyboard_view).also {
                 it.keyboard = keyboard
@@ -88,6 +95,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
                 updateKeyboardShiftState()
             }
             KEYCODE_STYLE -> cycleStyle(forward = true)
+            KEYCODE_SYMBOLS -> toggleSymbolsMode()
             else -> {
                 var char = primaryCode.toChar()
                 if (shiftState != ShiftState.OFF && char.isLetter()) {
@@ -134,6 +142,12 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
         val styles = FontStyle.entries
         val next = (styles.indexOf(currentFontStyle) + if (forward) 1 else styles.size - 1) % styles.size
         setFontStyle(styles[next])
+    }
+
+    private fun toggleSymbolsMode() {
+        isSymbolsMode = !isSymbolsMode
+        keyboard = if (isSymbolsMode) symbolsKeyboard else qwertyKeyboard
+        keyboardView?.keyboard = keyboard
     }
 
     private fun updateStyleIndicator() {
