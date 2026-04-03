@@ -16,7 +16,7 @@
     
     <!-- Keyboard colors (Dark Theme) -->
     <color name="keyboard_background">#1E1E1E</color>
-    <color name="style_bar_background">#2D2D2D</color>
+    <color name="style_bar_background">#1E2340</color>
     <color name="style_indicator_text">#E0E0E0</color>
     
     <!-- Key colors (Dark Theme) -->

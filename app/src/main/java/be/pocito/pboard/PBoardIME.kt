@@ -137,7 +137,7 @@ class PBoardIME : InputMethodService(), KeyboardView.OnKeyboardActionListener {
     }
 
     private fun updateStyleIndicator() {
-        styleIndicator?.text = "Style: ${currentFontStyle.displayName}"
+        styleIndicator?.text = currentFontStyle.displayName
     }
 
     private fun updateKeyboardShiftState() {
