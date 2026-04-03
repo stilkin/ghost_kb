@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="9%p"
+    android:keyHeight="52dip"
+    android:horizontalGap="3dip"
+    android:verticalGap="6dip">
+
+    <!-- Row 1: 1 2 3 4 5 6 7 8 9 0 -->
+    <Row>
+        <Key android:keyLabel="1" android:codes="49" />
+        <Key android:keyLabel="2" android:codes="50" />
+        <Key android:keyLabel="3" android:codes="51" />
+        <Key android:keyLabel="4" android:codes="52" />
+        <Key android:keyLabel="5" android:codes="53" />
+        <Key android:keyLabel="6" android:codes="54" />
+        <Key android:keyLabel="7" android:codes="55" />
+        <Key android:keyLabel="8" android:codes="56" />
+        <Key android:keyLabel="9" android:codes="57" />
+        <Key android:keyLabel="0" android:codes="48" />
+    </Row>
+
+    <!-- Row 2: @ # $ _ &amp; - + ( ) / -->
+    <Row>
+        <Key android:keyLabel="\@" android:codes="64" />
+        <Key android:keyLabel="#" android:codes="35" />
+        <Key android:keyLabel="$" android:codes="36" />
+        <Key android:keyLabel="_" android:codes="95" />
+        <Key android:keyLabel="&amp;" android:codes="38" />
+        <Key android:keyLabel="-" android:codes="45" />
+        <Key android:keyLabel="+" android:codes="43" />
+        <Key android:keyLabel="(" android:codes="40" />
+        <Key android:keyLabel=")" android:codes="41" />
+        <Key android:keyLabel="/" android:codes="47" />
+    </Row>
+
+    <!-- Row 3: * " ' : ; ! ? ⌫ -->
+    <Row>
+        <Key android:keyLabel="*" android:codes="42" android:horizontalGap="5%p" />
+        <Key android:keyLabel="&quot;" android:codes="34" />
+        <Key android:keyLabel="'" android:codes="39" />
+        <Key android:keyLabel=":" android:codes="58" />
+        <Key android:keyLabel=";" android:codes="59" />
+        <Key android:keyLabel="!" android:codes="33" />
+        <Key android:keyLabel="\?" android:codes="63" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="13%p" />
+    </Row>
+
+    <!-- Row 4: ABC , [space] . ↵ -->
+    <Row>
+        <Key android:keyLabel="ABC" android:codes="-101" android:keyWidth="14%p" />
+        <Key android:keyLabel="," android:codes="44" android:keyWidth="9%p" />
+        <Key android:keyLabel=" " android:codes="32" android:keyWidth="44%p" />
+        <Key android:keyLabel="." android:codes="46" android:keyWidth="9%p" />
+        <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="14%p" />
+    </Row>
+
+    <!-- Spacer row for three-button navigation -->
+    <Row>
+    </Row>
+
+</Keyboard>

@@ -4,8 +4,8 @@
     android:keyHeight="52dip"
     android:horizontalGap="3dip"
     android:verticalGap="6dip">
-    
-    <!-- Row 1 -->
+
+    <!-- Row 1: Q W E R T Y U I O P -->
     <Row>
         <Key android:keyLabel="Q" android:codes="113" />
         <Key android:keyLabel="W" android:codes="119" />
@@ -18,10 +18,10 @@
         <Key android:keyLabel="O" android:codes="111" />
         <Key android:keyLabel="P" android:codes="112" />
     </Row>
-    
-    <!-- Row 2 -->
+
+    <!-- Row 2: A S D F G H J K L -->
     <Row>
-        <Key android:keyLabel="A" android:codes="97" android:horizontalGap="5%"/>
+        <Key android:keyLabel="A" android:codes="97" android:horizontalGap="5%p" />
         <Key android:keyLabel="S" android:codes="115" />
         <Key android:keyLabel="D" android:codes="100" />
         <Key android:keyLabel="F" android:codes="102" />
@@ -31,28 +31,31 @@
         <Key android:keyLabel="K" android:codes="107" />
         <Key android:keyLabel="L" android:codes="108" />
     </Row>
-    
-    <!-- Row 3 -->
+
+    <!-- Row 3: ⇧ Z X C V B N M ⌫ -->
     <Row>
-        <Key android:keyLabel="Z" android:codes="122" android:horizontalGap="5%"/>
+        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="13%p" />
+        <Key android:keyLabel="Z" android:codes="122" />
         <Key android:keyLabel="X" android:codes="120" />
         <Key android:keyLabel="C" android:codes="99" />
         <Key android:keyLabel="V" android:codes="118" />
         <Key android:keyLabel="B" android:codes="98" />
         <Key android:keyLabel="N" android:codes="110" />
         <Key android:keyLabel="M" android:codes="109" />
-        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="19%p" />
+        <Key android:keyLabel="⌫" android:codes="-5" android:keyWidth="13%p" />
     </Row>
-    
-    <!-- Row 4 -->
+
+    <!-- Row 4: 123 , [space] . ↵ -->
     <Row>
-        <Key android:keyLabel="⇧" android:codes="-1" android:keyWidth="19%p" />
-        <Key android:keyLabel=" " android:codes="32" android:keyWidth="57%p" />
-        <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="19%p" />
+        <Key android:keyLabel="123" android:codes="-101" android:keyWidth="14%p" />
+        <Key android:keyLabel="," android:codes="44" android:keyWidth="9%p" />
+        <Key android:keyLabel=" " android:codes="32" android:keyWidth="44%p" />
+        <Key android:keyLabel="." android:codes="46" android:keyWidth="9%p" />
+        <Key android:keyLabel="↵" android:codes="-4" android:keyWidth="14%p" />
     </Row>
-    
-    <!-- Row 5 -->
+
+    <!-- Spacer row for three-button navigation -->
     <Row>
     </Row>
-    
+
 </Keyboard>

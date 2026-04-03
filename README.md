@@ -1,12 +1,12 @@
-# PBoard - Unicode Font Keyboard
+# Ghost Keyboard - Unicode Font Keyboard
 
 A minimalist Android keyboard that transforms your text into beautiful Unicode font styles in real-time.
 
 ## Features
 
 ✨ **11 Unicode Font Styles**
-- Double-struck (𝕳𝖊𝖑𝖑𝖔)
-- Cursive (𝓗𝓮𝓵𝓵𝓸)
+- Double-struck (ℍ𝕖𝕝𝕝𝕠)
+- Cursive (𝒞𝓊𝓇𝓈𝒾𝓋ℯ)
 - Cursive Bold (𝓗𝓮𝓵𝓵𝓸)
 - Fraktur (ℌ𝔢𝔩𝔩𝔬)
 - Fraktur Bold (𝕳𝖊𝖑𝖑𝖔)
@@ -15,7 +15,6 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - Bubble (ⓗⓔⓛⓛⓞ)
 - Bubble Black (🅗🅔🅛🅛🅞)
 - Square (🄷🄴🄻🄻🄾)
-- And more!
 
 ⚡ **Fast & Lightweight**
 - Real-time character transformation
@@ -28,8 +27,8 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - Restored when you reopen the keyboard
 
 🎯 **Easy to Use**
-- Simple QWERTY layout
-- One-tap style switching
+- Simple QWERTY layout with dedicated numbers/symbols page
+- Cycle through styles with ◀/▶ buttons
 - Graceful fallback for incomplete character sets
 
 ## Usage
@@ -37,7 +36,8 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 1. **Type normally** - Text appears in your selected style
 2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
 3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
-4. **Your text transforms instantly** - See styled characters as you type
+4. **Numbers & symbols** - Tap `123` to switch to numbers/symbols, `ABC` to switch back
+5. **Your text transforms instantly** - See styled characters as you type
 
 
 ## Installation
@@ -46,9 +46,9 @@ If you do not want to build from source and just want to sideload the APK, downl
 
 ### First-Time Setup
 
-1. Open the **PBoard** app
+1. Open the **Ghost** app
 2. Click **"Enable Keyboard"** → Enable in Settings
-3. Click **"Select Keyboard"** → Choose PBoard as default
+3. Click **"Select Keyboard"** → Choose Ghost as default
 4. Open any text field and start typing!
 
 ## Build from Source
@@ -126,17 +126,16 @@ PBoard/
 
 ## Future Enhancements
 
-- Long-press for numbers and symbols
-- Swipe-to-switch styles
+- Long-press for alternate characters (accents, common symbols)
 - Additional font styles (bold, italic, monospace, etc.)
 - Haptic/sound feedback
-- Multiple keyboard layouts
+- Emoji support
 
 ## Troubleshooting
 
 **Keyboard doesn't appear?**
-- Ensure PBoard is enabled in Settings → Languages & input → Virtual keyboard
-- Make sure PBoard is set as the default input method
+- Ensure Ghost is enabled in Settings → Languages & input → Virtual keyboard
+- Make sure Ghost is set as the default input method
 
 **Build fails?**
 - Verify Oracle Java 10+ is installed: `java -version`
@@ -177,8 +176,8 @@ Feel free to:
 
 ## Support
 
-If you enjoy PBoard and want to support its development, consider buying me a drink:
+If you enjoy Ghost Keyboard and want to support its development, consider buying me a drink:
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
 
-Your support helps me continue developing and improving Low-Ki! ☕
+Your support helps me continue developing and improving Ghost Keyboard! ☕
