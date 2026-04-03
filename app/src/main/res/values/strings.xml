@@ -10,28 +10,11 @@
     <string name="app_description">Ghost is a minimalist keyboard with Unicode font styles. Transform your text into beautiful fonts like double-struck, cursive, fraktur, bubble text, and more!</string>
     <string name="enable_keyboard">Enable Keyboard</string>
     <string name="select_keyboard">Select Keyboard</string>
+    <string name="getting_started">Getting started</string>
+    <string name="support_on_kofi">Support on Ko-fi</string>
     <string name="instructions">Instructions:\n1. Click "Enable Keyboard" to open settings\n2. Enable "Ghost Keyboard"\n3. Click "Select Keyboard" to choose it as your input method\n4. Start typing in any app to use Ghost!</string>
-    
+
     <!-- Font styles -->
     <string name="font_styles_preview">Font Styles Preview:</string>
     <string name="font_styles_examples">Normal: Hello World\nDouble-struck: 𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉\nCursive: 𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭\nBubble: ⓗⓔⓛⓛⓞ ⓦⓞⓡⓛⓓ\nSquare: 🄷🄴🄻🄻🄾 🅆🄾🅁🄻🄳</string>
-    
-    <!-- Style selector -->
-    <string name="style_normal">Normal</string>
-    <string name="style_double_struck">Double-struck</string>
-    <string name="style_cursive">Cursive</string>
-    <string name="style_cursive_bold">Cursive Bold</string>
-    <string name="style_fraktur">Fraktur</string>
-    <string name="style_fraktur_bold">Fraktur Bold</string>
-    <string name="style_upside_down">Upside Down</string>
-    <string name="style_fullwidth">Fullwidth</string>
-    <string name="style_small_caps">Small Caps</string>
-    <string name="style_bubble">Bubble</string>
-    <string name="style_bubble_black">Bubble Black</string>
-    <string name="style_square">Square</string>
-    <string name="style_square_black">Square Black</string>
-    
-    <!-- Settings -->
-    <string name="show_styled_characters">Show styled characters on keys</string>
-    <string name="show_styled_characters_summary">Display Unicode characters on keyboard keys (may affect legibility)</string>
 </resources>
