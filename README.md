@@ -5,8 +5,8 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 ## Features
 
 ✨ **11 Unicode Font Styles**
-- Double-struck (𝕳𝖊𝖑𝖑𝖔)
-- Cursive (𝓗𝓮𝓵𝓵𝓸)
+- Double-struck (ℍ𝕖𝕝𝕝𝕠)
+- Cursive (𝒞𝓊𝓇𝓈𝒾𝓋ℯ)
 - Cursive Bold (𝓗𝓮𝓵𝓵𝓸)
 - Fraktur (ℌ𝔢𝔩𝔩𝔬)
 - Fraktur Bold (𝕳𝖊𝖑𝖑𝖔)
@@ -15,7 +15,6 @@ A minimalist Android keyboard that transforms your text into beautiful Unicode f
 - Bubble (ⓗⓔⓛⓛⓞ)
 - Bubble Black (🅗🅔🅛🅛🅞)
 - Square (🄷🄴🄻🄻🄾)
-- And more!
 
 ⚡ **Fast & Lightweight**
 - Real-time character transformation

@@ -16,5 +16,5 @@
 
     <!-- Font styles -->
     <string name="font_styles_preview">Font Styles Preview:</string>
-    <string name="font_styles_examples">Normal: Hello World\nDouble-struck: 𝕳𝖊𝖑𝖑𝖔 𝖂𝖔𝖗𝖑𝖉\nCursive: 𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭\nBubble: ⓗⓔⓛⓛⓞ ⓦⓞⓡⓛⓓ\nSquare: 🄷🄴🄻🄻🄾 🅆🄾🅁🄻🄳</string>
+    <string name="font_styles_examples">Normal: Hello World\nDouble-struck: ℍ𝕖𝕝𝕝𝕠 𝕎𝕠𝕣𝕝𝕕\nCursive: 𝓗𝓮𝓵𝓵𝓸 𝓦𝓸𝓻𝓵𝓭\nBubble: ⓗⓔⓛⓛⓞ ⓦⓞⓡⓛⓓ\nSquare: 🄷🄴🄻🄻🄾 🅆🄾🅁🄻🄳</string>
 </resources>
