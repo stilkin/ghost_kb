@@ -27,7 +27,7 @@ class MainActivity : Activity() {
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(
                 this,
-                "Could not open settings. Please enable PBoard in Settings > Languages & input > Virtual keyboard",
+                "Could not open settings. Please enable Ghost in Settings > Languages & input > Virtual keyboard",
                 Toast.LENGTH_LONG,
             ).show()
         }

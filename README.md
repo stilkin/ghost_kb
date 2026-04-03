@@ -1,4 +1,4 @@
-# PBoard - Unicode Font Keyboard
+# Ghost Keyboard - Unicode Font Keyboard
 
 A minimalist Android keyboard that transforms your text into beautiful Unicode font styles in real-time.
 
@@ -46,9 +46,9 @@ If you do not want to build from source and just want to sideload the APK, downl
 
 ### First-Time Setup
 
-1. Open the **PBoard** app
+1. Open the **Ghost** app
 2. Click **"Enable Keyboard"** → Enable in Settings
-3. Click **"Select Keyboard"** → Choose PBoard as default
+3. Click **"Select Keyboard"** → Choose Ghost as default
 4. Open any text field and start typing!
 
 ## Build from Source
@@ -135,8 +135,8 @@ PBoard/
 ## Troubleshooting
 
 **Keyboard doesn't appear?**
-- Ensure PBoard is enabled in Settings → Languages & input → Virtual keyboard
-- Make sure PBoard is set as the default input method
+- Ensure Ghost is enabled in Settings → Languages & input → Virtual keyboard
+- Make sure Ghost is set as the default input method
 
 **Build fails?**
 - Verify Oracle Java 10+ is installed: `java -version`
@@ -177,8 +177,8 @@ Feel free to:
 
 ## Support
 
-If you enjoy PBoard and want to support its development, consider buying me a drink:
+If you enjoy Ghost Keyboard and want to support its development, consider buying me a drink:
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
 
-Your support helps me continue developing and improving Low-Ki! ☕
+Your support helps me continue developing and improving Ghost Keyboard! ☕

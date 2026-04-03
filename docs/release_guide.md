@@ -1,6 +1,6 @@
-# PBoard Release Guide
+# Ghost Keyboard Release Guide
 
-Complete guide for building and deploying PBoard as a release APK for sideloading on Android phones.
+Complete guide for building and deploying Ghost Keyboard as a release APK for sideloading on Android phones.
 
 ## 🏗️ Build Release APK
 
@@ -128,7 +128,7 @@ adb shell pm list packages | grep pboard
 
 ```bash
 # Copy to a location you can share
-cp app/build/outputs/apk/release/app-release.apk ~/Downloads/PBoard.apk
+cp app/build/outputs/apk/release/app-release.apk ~/Downloads/Ghost.apk
 
 # Then email, upload to cloud storage, etc.
 ```
@@ -139,11 +139,11 @@ cp app/build/outputs/apk/release/app-release.apk ~/Downloads/PBoard.apk
 
 After installation, users need to enable the keyboard:
 
-1. **Open PBoard app** - Tap the launcher icon
+1. **Open Ghost app** - Tap the launcher icon
 2. **Click "Enable Keyboard"** - Opens Settings → Languages & input → Virtual keyboard
-3. **Enable "PBoard Keyboard"** - Toggle it on
+3. **Enable "Ghost Keyboard"** - Toggle it on
 4. **Click "Select Keyboard"** - Opens input method selector
-5. **Choose "PBoard Keyboard"** as default
+5. **Choose "Ghost Keyboard"** as default
 6. **Open any text field** - Keyboard should appear!
 
 ---
@@ -306,7 +306,7 @@ adb logcat | grep pboard
 # - Permission issues
 
 # Test on emulator first
-# Emulator → Settings → Apps → PBoard → Permissions
+# Emulator → Settings → Apps → Ghost → Permissions
 ```
 
 ### "Keyboard doesn't appear"
