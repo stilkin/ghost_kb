@@ -147,22 +147,12 @@ PBoard/
 - Text will fall back to normal characters automatically
 - Try in WhatsApp, Signal, Notes, or Twitter
 
-## License
-
-This project is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
-
-**Free for non-commercial use.** You may use, modify, and distribute this software for personal, educational, or other noncommercial purposes. Commercial use requires a separate agreement with the author.
-
-See the [LICENSE](LICENSE) file for full terms, or visit https://polyformproject.org/licenses/noncommercial/1.0.0/
-
 ## Contributing
 
 Contributions are welcome! 
 Feel free to:
 - Report bugs
 - Suggest features
-- Improve documentation
-- Fix bugs?
 
 ## References
 
@@ -181,3 +171,7 @@ If you enjoy Ghost Keyboard and want to support its development, consider buying
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
 
 Your support helps me continue developing and improving Ghost Keyboard! ☕
+
+## License
+
+[PolyForm Noncommercial License 1.0.0](LICENSE)
