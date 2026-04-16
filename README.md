@@ -61,7 +61,7 @@ Plus a **Normal** mode that passes text through unchanged.
 
 ## Installation
 
-Download the APK from the [`release`](release/) folder and sideload it on your Android phone.
+Download the latest APK from the [Releases page](https://github.com/stilkin/ghost_kb/releases/latest) and sideload it on your Android phone.
 
 ### First-Time Setup
 
