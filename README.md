@@ -1,128 +1,77 @@
-# Ghost Keyboard - Unicode Font Keyboard
+<p align="center">
+  <img src="docs/app_icon.jpg" alt="Ghost Keyboard" width="150">
+</p>
 
-A minimalist Android keyboard that transforms your text into beautiful Unicode font styles in real-time.
+<h1 align="center">Ghost Keyboard</h1>
+
+<p align="center">
+  A minimalist Android keyboard that transforms your text into beautiful Unicode font styles in real-time.
+</p>
+
+<p align="center">
+  <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/License-PolyForm_NC_1.0-blue">
+</p>
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Building from Source](#building-from-source)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [References](#references)
+- [Support](#support)
+- [License](#license)
 
 ## Features
 
-✨ **11 Unicode Font Styles**
-- Double-struck (ℍ𝕖𝕝𝕝𝕠)
-- Cursive (𝒞𝓊𝓇𝓈𝒾𝓋ℯ)
-- Cursive Bold (𝓗𝓮𝓵𝓵𝓸)
-- Fraktur (ℌ𝔢𝔩𝔩𝔬)
-- Fraktur Bold (𝕳𝖊𝖑𝖑𝖔)
-- Fullwidth (Ｈｅｌｌｏ)
-- Small Caps (ʜᴇʟʟᴏ)
-- Bubble (ⓗⓔⓛⓛⓞ)
-- Bubble Black (🅗🅔🅛🅛🅞)
-- Square (🄷🄴🄻🄻🄾)
+**10 Unicode Font Styles** — type normally and see styled characters instantly:
 
-⚡ **Fast & Lightweight**
-- Real-time character transformation
-- O(1) lookup performance
-- ~50KB total memory footprint
-- No external dependencies
+| Style | Example |
+|-------|---------|
+| Double-struck | `ℍ𝕖𝕝𝕝𝕠` |
+| Cursive | `𝒞𝓊𝓇𝓈𝒾𝓋ℯ` |
+| Cursive Bold | `𝓗𝓮𝓵𝓵𝓸` |
+| Fraktur | `ℌ𝔢𝔩𝔩𝔬` |
+| Fraktur Bold | `𝕳𝖊𝖑𝖑𝖔` |
+| Fullwidth | `Ｈｅｌｌｏ` |
+| Small Caps | `ʜᴇʟʟᴏ` |
+| Bubble | `ⓗⓔⓛⓛⓞ` |
+| Bubble Black | `🅗🅔🅛🅛🅞` |
+| Square | `🄷🄴🄻🄻🄾` |
 
-💾 **Persistent Settings**
-- Your selected style is saved automatically
-- Restored when you reopen the keyboard
+Plus a **Normal** mode that passes text through unchanged.
 
-🎯 **Easy to Use**
-- Simple QWERTY layout with dedicated numbers/symbols page
-- Cycle through styles with ◀/▶ buttons
-- Graceful fallback for incomplete character sets
+**Fast & Lightweight** — O(1) lookup performance, ~50KB memory footprint, no external dependencies.
+
+**Persistent Settings** — your selected style is saved automatically and restored when you reopen the keyboard.
 
 ## Usage
 
-1. **Type normally** - Text appears in your selected style
-2. **Navigate styles** - Use ◀ and ▶ buttons to cycle through styles
-3. **Capitalize text** - Press ⇧ (Shift) then type a letter for uppercase
-4. **Numbers & symbols** - Tap `123` to switch to numbers/symbols, `ABC` to switch back
-5. **Your text transforms instantly** - See styled characters as you type
-
+1. **Type normally** — text appears in your selected style
+2. **Navigate styles** — use the arrow buttons to cycle through styles
+3. **Capitalize** — press Shift then type a letter for uppercase
+4. **Numbers & symbols** — tap `123` to switch, `ABC` to switch back
 
 ## Installation
 
-If you do not want to build from source and just want to sideload the APK, download it from the `release` folder to your Android phone and install it.
+Download the APK from the [`release`](release/) folder and sideload it on your Android phone.
 
 ### First-Time Setup
 
 1. Open the **Ghost** app
-2. Click **"Enable Keyboard"** → Enable in Settings
-3. Click **"Select Keyboard"** → Choose Ghost as default
+2. Tap **"Enable Keyboard"** and enable it in Settings
+3. Tap **"Select Keyboard"** and choose Ghost as your default
 4. Open any text field and start typing!
 
-## Build from Source
+## Building from Source
 
-1. **Install Android SDK**
-
-- download from [the Android Studio website](https://developer.android.com/studio)
-
-
-2. **Install Oracle Java JDK**
-
-- download from [the Oracle website](https://www.oracle.com/java/technologies/downloads/#java21)
-- make sure your `JAVA_HOME` variable is set to the folder where you installed it
-
-3. **Build the APK**
-   ```bash
-   cd /home/srt/AndroidStudioProjects/PBoard
-   ./gradlew assembleDebug
-   ```
-
-4. **Install on device/emulator**
-   ```bash
-   ./gradlew installDebug
-   ```
-
-## Project Structure
-
-```
-PBoard/
-├── app/src/main/java/be/pocito/pboard/
-│   ├── PBoardIME.kt              # Main IME service
-│   ├── MainActivity.kt            # Setup/launcher activity
-│   ├── style/
-│   │   ├── FontStyle.kt           # Style enum
-│   │   ├── FontStyles.kt          # Character mappings
-│   │   └── FontStyleTransformer.kt # Transformation engine
-│   ├── ui/
-│   │   └── StyleSelector.kt       # Style picker dialog
-│   └── preferences/
-│       └── KeyboardPreferences.kt # Settings persistence
-├── app/src/main/res/
-│   ├── layout/                    # UI layouts
-│   ├── xml/                       # Keyboard layout & metadata
-│   ├── drawable/                  # Key styling
-│   └── values/                    # Colors & strings
-└── docs/
-    └── release_guide.md        # Instructions on how to build for release
-```
-
-## Technical Details
-
-### Supported Android Versions
-- **Min SDK**: Android 11 (API 30)
-- **Target SDK**: Android 15 (API 36)
-- **Language**: Kotlin
-
-### Architecture
-- **InputMethodService** - Core IME framework integration
-- **KeyboardView** - Keyboard UI rendering
-- **SharedPreferences** - User preference persistence
-- **Character Mapping** - O(1) Unicode transformation
-
-### Font Coverage
-- **Double-struck**: 95% (includes numbers)
-- **Cursive**: 95% (includes numbers)
-- **Cursive Bold**: 95% (includes numbers)
-- **Fraktur**: 90%
-- **Fraktur Bold**: 90%
-- **Fullwidth**: 100%
-- **Small Caps**: 80%
-- **Bubble**: 95%
-- **Bubble Black**: 95%
-- **Square**: 95%
-
+See [docs/building.md](docs/building.md) for build instructions, project structure, architecture details, and troubleshooting.
 
 ## Future Enhancements
 
@@ -131,26 +80,9 @@ PBoard/
 - Haptic/sound feedback
 - Emoji support
 
-## Troubleshooting
-
-**Keyboard doesn't appear?**
-- Ensure Ghost is enabled in Settings → Languages & input → Virtual keyboard
-- Make sure Ghost is set as the default input method
-
-**Build fails?**
-- Verify Oracle Java 10+ is installed: `java -version`
-- Set JAVA_HOME: `export JAVA_HOME=/usr/lib/jvm/java-...`
-- Clean and rebuild: `./gradlew clean assembleDebug`
-
-**Styled text not showing?**
-- Some apps may not support Unicode characters
-- Text will fall back to normal characters automatically
-- Try in WhatsApp, Signal, Notes, or Twitter
-
 ## Contributing
 
-Contributions are welcome! 
-Feel free to:
+Contributions are welcome! Feel free to:
 - Report bugs
 - Suggest features
 
@@ -162,7 +94,7 @@ Feel free to:
 
 ---
 
-**Made with ❤️ for Unicode enthusiasts**
+**Made with love for Unicode enthusiasts**
 
 ## Support
 
@@ -170,7 +102,7 @@ If you enjoy Ghost Keyboard and want to support its development, consider buying
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/stilkin)
 
-Your support helps me continue developing and improving Ghost Keyboard! ☕
+Your support helps me continue developing and improving Ghost Keyboard!
 
 ## License
 

@@ -71,9 +71,7 @@ export PBOARD_KEY_PASSWORD=your_password
 ### Step 3: Build Release APK
 
 ```bash
-cd /home/srt/AndroidStudioProjects/PBoard
-
-# Build the release APK
+# Build the release APK (from the project root)
 ./gradlew assembleRelease
 
 # Output will be at:
