@@ -9,9 +9,10 @@
 </p>
 
 <p align="center">
-  <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
-  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/License-PolyForm_NC_1.0-blue">
+  <a href="https://developer.android.com/about/versions/11"><img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white"></a>
+  <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-PolyForm_NC_1.0-blue"></a>
+  <a href="https://ko-fi.com/stilkin"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-F16061?logo=ko-fi&logoColor=white"></a>
 </p>
 
 ---
