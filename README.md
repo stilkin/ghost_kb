@@ -174,4 +174,4 @@ Your support helps me continue developing and improving Ghost Keyboard! ☕
 
 ## License
 
-[PolyForm Noncommercial License 1.0.0](LICENSE)
+[PolyForm Noncommercial 1.0.0](LICENSE) — free to use for personal and non-commercial purposes.
