@@ -23,10 +23,10 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file(System.getProperty("user.home") + "/pboard-release.keystore")
-            storePassword = System.getenv("PBOARD_KEYSTORE_PASSWORD")
-            keyAlias = "pboard"
-            keyPassword = System.getenv("PBOARD_KEY_PASSWORD")
+            storeFile = file(System.getProperty("user.home") + "/ghostkb-release.keystore")
+            storePassword = System.getenv("GHOSTKB_KEYSTORE_PASSWORD")
+            keyAlias = "ghostkb"
+            keyPassword = System.getenv("GHOSTKB_KEY_PASSWORD")
         }
     }
 
