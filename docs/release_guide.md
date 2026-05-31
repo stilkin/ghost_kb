@@ -9,7 +9,7 @@ Complete guide for building and deploying Ghost Keyboard as a release APK for si
 First, you need to create a keystore file to sign your APK:
 
 ```bash
-keytool -genkey -v -keystore ~/pboard-release.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias pboard
+keytool -genkey -v -keystore ~/ghostkb-release.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias ghostkb
 ```
 
 You'll be prompted for:
@@ -17,7 +17,7 @@ You'll be prompted for:
 - **Key password** - Can be the same as keystore password
 - **Your name, organization, etc.** - Fill in as desired
 
-This creates `~/pboard-release.keystore` - **keep this file safe!** You'll need it for future updates.
+This creates `~/ghostkb-release.keystore` - **keep this file safe!** You'll need it for future updates.
 
 ### Step 2: Configure Gradle Signing
 
@@ -29,9 +29,9 @@ android {
     
     signingConfigs {
         create("release") {
-            storeFile = file(System.getProperty("user.home") + "/pboard-release.keystore")
+            storeFile = file(System.getProperty("user.home") + "/ghostkb-release.keystore")
             storePassword = "YOUR_KEYSTORE_PASSWORD"
-            keyAlias = "pboard"
+            keyAlias = "ghostkb"
             keyPassword = "YOUR_KEY_PASSWORD"
         }
     }
@@ -51,10 +51,10 @@ android {
 ```kotlin
 signingConfigs {
     create("release") {
-        storeFile = file(System.getenv("PBOARD_KEYSTORE_PATH") ?: "~/pboard-release.keystore")
-        storePassword = System.getenv("PBOARD_KEYSTORE_PASSWORD")
-        keyAlias = System.getenv("PBOARD_KEY_ALIAS") ?: "pboard"
-        keyPassword = System.getenv("PBOARD_KEY_PASSWORD")
+        storeFile = file(System.getenv("GHOSTKB_KEYSTORE_PATH") ?: "~/ghostkb-release.keystore")
+        storePassword = System.getenv("GHOSTKB_KEYSTORE_PASSWORD")
+        keyAlias = System.getenv("GHOSTKB_KEY_ALIAS") ?: "ghostkb"
+        keyPassword = System.getenv("GHOSTKB_KEY_PASSWORD")
     }
 }
 ```
@@ -62,10 +62,10 @@ signingConfigs {
 Then set environment variables before building:
 
 ```bash
-export PBOARD_KEYSTORE_PATH=~/pboard-release.keystore
-export PBOARD_KEYSTORE_PASSWORD=your_password
-export PBOARD_KEY_ALIAS=pboard
-export PBOARD_KEY_PASSWORD=your_password
+export GHOSTKB_KEYSTORE_PATH=~/ghostkb-release.keystore
+export GHOSTKB_KEYSTORE_PASSWORD=your_password
+export GHOSTKB_KEY_ALIAS=ghostkb
+export GHOSTKB_KEY_PASSWORD=your_password
 ```
 
 ### Step 3: Build Release APK
@@ -105,7 +105,7 @@ adb install app/build/outputs/apk/release/app-release.apk
 adb install -r app/build/outputs/apk/release/app-release.apk
 
 # Verify installation
-adb shell pm list packages | grep pboard
+adb shell pm list packages | grep ghostkb
 ```
 
 ### Option B: Manual Sideload
@@ -152,29 +152,29 @@ After installation, users need to enable the keyboard:
 
 ```bash
 # Check if app is installed
-adb shell pm list packages | grep pboard
+adb shell pm list packages | grep ghostkb
 
 # View detailed app info
-adb shell dumpsys package be.pocito.pboard
+adb shell dumpsys package be.pocito.ghostkb
 
 # View app logs while using keyboard
-adb logcat | grep pboard
+adb logcat | grep ghostkb
 
 # Clear app data (if needed)
-adb shell pm clear be.pocito.pboard
+adb shell pm clear be.pocito.ghostkb
 ```
 
 ### View Logs
 
 ```bash
 # Real-time logs
-adb logcat | grep pboard
+adb logcat | grep ghostkb
 
 # Save logs to file
-adb logcat > pboard_logs.txt
+adb logcat > ghostkb_logs.txt
 
 # Filter by log level (E=Error, W=Warning, I=Info, D=Debug)
-adb logcat *:E | grep pboard
+adb logcat *:E | grep ghostkb
 ```
 
 ### Test Keyboard
@@ -255,7 +255,7 @@ For future updates, increment the version in `app/build.gradle.kts`:
 ```kotlin
 android {
     defaultConfig {
-        applicationId = "be.pocito.pboard"
+        applicationId = "be.pocito.ghostkb"
         minSdk = 30
         targetSdk = 36
         versionCode = 2  // Increment for each release
@@ -288,14 +288,14 @@ adb start-server
 adb shell df /data
 
 # Try uninstalling first
-adb uninstall be.pocito.pboard
+adb uninstall be.pocito.ghostkb
 adb install app/build/outputs/apk/release/app-release.apk
 ```
 
 ### "App crashes on launch"
 ```bash
 # Check logcat for errors
-adb logcat | grep pboard
+adb logcat | grep ghostkb
 
 # Look for stack traces and error messages
 # Common issues:
@@ -310,7 +310,7 @@ adb logcat | grep pboard
 ### "Keyboard doesn't appear"
 ```bash
 # Verify app is installed
-adb shell pm list packages | grep pboard
+adb shell pm list packages | grep ghostkb
 
 # Check if keyboard is enabled
 adb shell settings get secure enabled_input_methods
@@ -325,10 +325,10 @@ adb reboot
 ### "Build fails with signing error"
 ```bash
 # Verify keystore file exists
-ls -la ~/pboard-release.keystore
+ls -la ~/ghostkb-release.keystore
 
 # Check keystore password is correct
-keytool -list -v -keystore ~/pboard-release.keystore
+keytool -list -v -keystore ~/ghostkb-release.keystore
 
 # Verify gradle config has correct paths and passwords
 # Check for typos in build.gradle.kts
@@ -366,7 +366,7 @@ For users updating from a previous version:
 adb install -r app/build/outputs/apk/release/app-release.apk
 
 # Or uninstall first, then install
-adb uninstall be.pocito.pboard
+adb uninstall be.pocito.ghostkb
 adb install app/build/outputs/apk/release/app-release.apk
 ```
 

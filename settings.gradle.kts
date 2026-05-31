@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PBoard"
+rootProject.name = "Ghost"
 include(":app")

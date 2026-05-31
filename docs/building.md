@@ -111,5 +111,5 @@ onKey(keyCode) → transformCharacter(char, style) → FontStyles[style].map[cha
 
 ```bash
 adb install -r app/build/outputs/apk/release/app-release.apk
-adb logcat | grep pboard
+adb logcat | grep ghostkb
 ```

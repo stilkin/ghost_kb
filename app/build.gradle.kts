@@ -12,21 +12,21 @@ android {
     }
 
     defaultConfig {
-        applicationId = "be.pocito.pboard"
+        applicationId = "be.pocito.ghostkb"
         minSdk = 30
         targetSdk = 36
-        versionCode = 24
-        versionName = "3.0"
+        versionCode = 25
+        versionName = "3.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         create("release") {
-            storeFile = file(System.getProperty("user.home") + "/pboard-release.keystore")
-            storePassword = System.getenv("PBOARD_KEYSTORE_PASSWORD")
-            keyAlias = "pboard"
-            keyPassword = System.getenv("PBOARD_KEY_PASSWORD")
+            storeFile = file(System.getProperty("user.home") + "/ghostkb-release.keystore")
+            storePassword = System.getenv("GHOSTKB_KEYSTORE_PASSWORD")
+            keyAlias = "ghostkb"
+            keyPassword = System.getenv("GHOSTKB_KEY_PASSWORD")
         }
     }
 
