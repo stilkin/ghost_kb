@@ -17,14 +17,9 @@ class KeyboardPreferences(context: Context) {
         private const val DEFAULT_STYLE = "NORMAL"
     }
 
-    @Suppress("SwallowedException")
     fun getCurrentStyle(): FontStyle {
-        val styleName = sharedPreferences.getString(KEY_CURRENT_STYLE, DEFAULT_STYLE) ?: DEFAULT_STYLE
-        return try {
-            FontStyle.valueOf(styleName)
-        } catch (e: IllegalArgumentException) {
-            FontStyle.NORMAL
-        }
+        val styleName = sharedPreferences.getString(KEY_CURRENT_STYLE, DEFAULT_STYLE)
+        return FontStyle.fromName(styleName)
     }
 
     fun setCurrentStyle(style: FontStyle) {

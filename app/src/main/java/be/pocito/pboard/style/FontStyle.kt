@@ -12,4 +12,13 @@ enum class FontStyle(val displayName: String) {
     BUBBLE("Bubble"),
     BUBBLE_BLACK("Bubble Black"),
     SQUARE("Square"),
+    ;
+
+    companion object {
+        /**
+         * Resolves a persisted style name to a [FontStyle].
+         * Falls back to [NORMAL] for null or unrecognized names (e.g. stored by an older app version).
+         */
+        fun fromName(name: String?): FontStyle = FontStyle.entries.firstOrNull { it.name == name } ?: NORMAL
+    }
 }
